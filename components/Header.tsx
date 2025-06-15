@@ -1,16 +1,54 @@
-import siteMetadata from '@/data/siteMetadata'
+'use client'
+
 import headerNavLinks from '@/data/headerNavLinks'
 import Logo from '@/data/logo.svg'
 import Link from './Link'
 import MobileNav from './MobileNav'
 import ThemeSwitch from './ThemeSwitch'
 import SearchButton from './SearchButton'
+import { useEffect, useState } from 'react'
+import siteMetadata from '@/data/siteMetadata'
+
+function useIsScrollTop() {
+  const [isTop, setIsTop] = useState(true)
+  useEffect(() => {
+    function onScroll() {
+      setIsTop(window.scrollY <= 0)
+    }
+    window.addEventListener('scroll', onScroll)
+
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+    }
+  }, [])
+
+  return isTop
+}
+
+function useToggleMenu() {
+  const [menuShow, setMenuShow] = useState(false)
+  const onMenuToggle = () => {
+    setMenuShow((status) => {
+      if (status) {
+        document.body.style.overflow = 'auto'
+      } else {
+        // Prevent scrolling
+        document.body.style.overflow = 'hidden'
+      }
+      return !status
+    })
+  }
+  return [menuShow, onMenuToggle] as const
+}
 
 const Header = () => {
-  let headerClass = 'flex items-center w-full bg-white dark:bg-gray-950 justify-between py-10'
-  if (siteMetadata.stickyNav) {
-    headerClass += ' sticky top-0 z-50'
-  }
+  const isTop = useIsScrollTop()
+
+  const headerClass =
+    `sticky top-0 z-50 w-full flex items-center justify-between px-16 py-6 transition-all duration-300 ` +
+    (isTop
+      ? 'bg-white/60 dark:bg-gray-950/60 backdrop-blur-md backdrop-saturate-150'
+      : 'bg-white shadow dark:bg-gray-950')
 
   return (
     <header className={headerClass}>
