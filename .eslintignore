@@ -1,0 +1,6 @@
+# Ignore auto-generated Contentlayer files
+.contentlayer/
+
+# Build output
+.next
+out
