@@ -6,7 +6,6 @@ import { Space_Grotesk } from 'next/font/google'
 import { Analytics, AnalyticsConfig } from 'pliny/analytics'
 import { SearchProvider, SearchConfig } from 'pliny/search'
 import Header from '@/components/layout/Header'
-import SectionContainer from '@/components/layout/SectionContainer'
 import Footer from '@/components/layout/Footer'
 import siteMetadata from '@/data/siteMetadata'
 import { ThemeProviders } from './theme-providers'
@@ -99,10 +98,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
           <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>
             <Header />
-            <SectionContainer>
-              <main className="mb-auto">{children}</main>
-              <Footer />
-            </SectionContainer>
+            <main className="mb-auto">{children}</main>
+            <Footer />
           </SearchProvider>
         </ThemeProviders>
       </body>
