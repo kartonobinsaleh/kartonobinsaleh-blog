@@ -2,10 +2,10 @@
 
 import headerNavLinks from '@/data/headerNavLinks'
 import Logo from '@/data/logo.svg'
-import Link from './Link'
-import MobileNav from './MobileNav'
-import ThemeSwitch from './ThemeSwitch'
-import SearchButton from './SearchButton'
+import Link from '../ui/Link'
+import MobileNav from '../navigation/MobileNav'
+import ThemeSwitch from '../navigation/ThemeSwitch'
+import SearchButton from '../navigation/SearchButton'
 import { useEffect, useState } from 'react'
 import siteMetadata from '@/data/siteMetadata'
 
