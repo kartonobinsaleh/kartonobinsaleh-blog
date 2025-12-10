@@ -26,22 +26,6 @@ function useIsScrollTop() {
   return isTop
 }
 
-function useToggleMenu() {
-  const [menuShow, setMenuShow] = useState(false)
-  const onMenuToggle = () => {
-    setMenuShow((status) => {
-      if (status) {
-        document.body.style.overflow = 'auto'
-      } else {
-        // Prevent scrolling
-        document.body.style.overflow = 'hidden'
-      }
-      return !status
-    })
-  }
-  return [menuShow, onMenuToggle] as const
-}
-
 const Header = () => {
   const isTop = useIsScrollTop()
   const [openMenu, setOpenMenu] = useState<'theme' | 'mobile' | null>(null)
