@@ -46,14 +46,16 @@ const Header = () => {
   const isTop = useIsScrollTop()
 
   const headerClass =
-    `sticky top-0 z-50 w-full flex items-center justify-between px-16 py-6 transition-all duration-300 ` +
+    `sticky top-0 z-50 w-full flex items-center justify-between 
+  px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 
+  py-6 transition-all duration-300 ` +
     (isTop
       ? 'bg-white/60 dark:bg-gray-950/60 backdrop-blur-md backdrop-saturate-150'
       : 'bg-white shadow dark:bg-gray-950')
 
   return (
     <header className={headerClass}>
-      <div className='className="flex flex-1 items-center'>
+      <div className="flex flex-1 items-center">
         <Link href="/" aria-label={siteMetadata.headerTitle}>
           <div className="flex justify-center gap-2">
             <div className="h-8 w-8 overflow-hidden rounded-full">
