@@ -66,7 +66,7 @@ const Header = () => {
               />
             </div>
             {typeof siteMetadata.headerTitle === 'string' ? (
-              <div className="hidden h-6 text-2xl font-semibold sm:block">
+              <div className="hidden h-6 text-xl font-bold sm:block">
                 {siteMetadata.headerTitle}
               </div>
             ) : (
@@ -92,6 +92,15 @@ const Header = () => {
       <div className="flex flex-1 items-center justify-end space-x-4 sm:space-x-6">
         <SearchButton />
         <ThemeSwitch />
+        <Link
+          href="https://kartonobinsaleh.substack.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-primary-500 hover:bg-primary-600 hidden rounded-lg px-4 py-2 text-sm font-semibold text-white transition-colors sm:block"
+        >
+          Join Newsletter
+        </Link>
+
         <MobileNav />
       </div>
     </header>
