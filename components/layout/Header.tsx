@@ -1,13 +1,14 @@
 'use client'
 
 import headerNavLinks from '@/data/headerNavLinks'
-import Logo from '@/data/logo.svg'
+import Logo from '@/data/logo.png'
 import Link from '../ui/Link'
 import MobileNav from '../navigation/MobileNav'
 import ThemeSwitch from '../navigation/ThemeSwitch'
 import SearchButton from '../navigation/SearchButton'
 import { useEffect, useState } from 'react'
 import siteMetadata from '@/data/siteMetadata'
+import Image from 'next/image'
 
 function useIsScrollTop() {
   const [isTop, setIsTop] = useState(true)
@@ -54,9 +55,15 @@ const Header = () => {
     <header className={headerClass}>
       <div className='className="flex flex-1 items-center'>
         <Link href="/" aria-label={siteMetadata.headerTitle}>
-          <div className="flex items-center">
-            <div className="mr-3">
-              <Logo />
+          <div className="flex justify-center gap-2">
+            <div className="h-8 w-8 overflow-hidden rounded-full">
+              <Image
+                src={Logo}
+                alt="Logo"
+                width={40}
+                height={40}
+                className="h-full w-full object-cover"
+              />
             </div>
             {typeof siteMetadata.headerTitle === 'string' ? (
               <div className="hidden h-6 text-2xl font-semibold sm:block">
