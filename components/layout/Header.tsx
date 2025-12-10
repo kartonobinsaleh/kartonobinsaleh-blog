@@ -44,6 +44,7 @@ function useToggleMenu() {
 
 const Header = () => {
   const isTop = useIsScrollTop()
+  const [openMenu, setOpenMenu] = useState<'theme' | 'mobile' | null>(null)
 
   const headerClass =
     `sticky top-0 z-50 w-full flex items-center justify-between 
@@ -91,9 +92,10 @@ const Header = () => {
             </Link>
           ))}
       </nav>
-      <div className="flex flex-1 items-center justify-end space-x-4 sm:space-x-6">
+      <div className="flex flex-1 items-center justify-end gap-2 md:gap-4">
         <SearchButton />
-        <ThemeSwitch />
+        <ThemeSwitch openMenu={openMenu} setOpenMenuAction={setOpenMenu} />
+
         <Link
           href="https://kartonobinsaleh.substack.com/"
           target="_blank"
@@ -103,7 +105,7 @@ const Header = () => {
           Join Newsletter
         </Link>
 
-        <MobileNav />
+        <MobileNav openMenu={openMenu} setOpenMenuAction={setOpenMenu} />
       </div>
     </header>
   )
