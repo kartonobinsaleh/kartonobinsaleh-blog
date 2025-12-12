@@ -7,7 +7,8 @@
 /* Core theme configuration */
 @theme {
   /* Font families */
-  --font-sans: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+  --font-sans:
+    var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 
   /* Colors */
@@ -79,6 +80,20 @@
 }
 
 @layer utilities {
+  @keyframes bounce-up-down {
+    0%,
+    100% {
+      transform: translateY(-4px);
+    }
+    50% {
+      transform: translateY(4px);
+    }
+  }
+
+  .animate-bounce-up-down {
+    animation: bounce-up-down 0.8s ease-in-out infinite;
+  }
+
   .prose {
     & a {
       color: var(--color-primary-500);

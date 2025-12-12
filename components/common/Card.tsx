@@ -23,7 +23,13 @@ export default function Card({
         style={{ minHeight }}
       >
         <div className="relative h-48 w-full overflow-hidden rounded-t-xl">
-          <Image src={`${imageUrl}?random=${slug}`} alt={title} fill className="object-cover" />
+          <Image
+            src={`${imageUrl}?random=${slug}`}
+            alt={title}
+            width={400}
+            height={200}
+            className="h-48 w-full rounded-t-xl object-cover"
+          />
         </div>
 
         <div className="flex flex-1 flex-col justify-start gap-2 p-6">

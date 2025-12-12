@@ -5,11 +5,11 @@ import { formatDate } from 'pliny/utils/formatDate'
 import NewsletterForm from 'pliny/ui/NewsletterForm'
 import { sortPosts, allCoreContent } from 'pliny/utils/contentlayer'
 import { allBlogs } from 'contentlayer/generated'
-import Hero from '@/components/common/Hero'
+import Hero from '@/components/common/HomeHero'
 import SectionContainer from '@/components/layout/SectionContainer'
 import Newsletter from '@/components/common/NewsLetter'
-import Image from 'next/image'
 import Card from '@/components/common/Card'
+import HomeHero from '@/components/common/HomeHero'
 
 const MAX_DISPLAY = 6
 
@@ -19,14 +19,9 @@ export default async function HomePage() {
 
   return (
     <>
-      <Hero
-        title="Welcome to My Blog"
-        description="Sharing ideas, projects, and stories about web development and more."
-        ctaText="View Projects"
-        ctaHref="/projects"
-      />
+      <HomeHero />
 
-      <SectionContainer>
+      <SectionContainer id="latest-posts">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
           <h1 className="text-2xl leading-7 font-bold tracking-tight text-gray-900 sm:text-3xl md:text-4xl dark:text-gray-100">
             Apa yang baru?

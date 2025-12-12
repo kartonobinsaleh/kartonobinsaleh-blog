@@ -31,65 +31,67 @@ const Header = () => {
   const [openMenu, setOpenMenu] = useState<'theme' | 'mobile' | null>(null)
 
   const headerClass =
-    `sticky top-0 z-50 w-full flex items-center justify-between 
-  px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 
-  py-6 transition-all duration-300 ` +
+    `sticky top-0 z-50 w-full py-6 transition-all duration-300 ` +
     (isTop
       ? 'bg-white/60 dark:bg-gray-950/60 backdrop-blur-md backdrop-saturate-150'
       : 'bg-white shadow dark:bg-gray-950')
 
   return (
     <header className={headerClass}>
-      <div className="flex flex-1 items-center">
-        <Link href="/" aria-label={siteMetadata.headerTitle}>
-          <div className="flex justify-center gap-2">
-            <div className="h-8 w-8 overflow-hidden rounded-full">
-              <Image
-                src={Logo}
-                alt="Logo"
-                width={40}
-                height={40}
-                className="h-full w-full object-cover"
-              />
-            </div>
-            {typeof siteMetadata.headerTitle === 'string' ? (
-              <div className="hidden h-6 text-xl font-bold sm:block">
-                {siteMetadata.headerTitle}
+      <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 sm:px-6 xl:px-0">
+        {/* Logo */}
+        <div className="flex items-center">
+          <Link href="/" aria-label={siteMetadata.headerTitle}>
+            <div className="flex items-center justify-center gap-2">
+              <div className="h-8 w-8 overflow-hidden rounded-full">
+                <Image
+                  src={Logo}
+                  alt="Logo"
+                  width={40}
+                  height={40}
+                  className="h-full w-full object-cover"
+                />
               </div>
-            ) : (
-              siteMetadata.headerTitle
-            )}
-          </div>
-        </Link>
-      </div>
+              {typeof siteMetadata.headerTitle === 'string' ? (
+                <div className="hidden h-6 text-xl font-bold sm:block">
+                  {siteMetadata.headerTitle}
+                </div>
+              ) : (
+                siteMetadata.headerTitle
+              )}
+            </div>
+          </Link>
+        </div>
 
-      <nav className="hidden flex-1 justify-center space-x-6 sm:flex">
-        {headerNavLinks
-          .filter((link) => link.href !== '/')
-          .map((link) => (
-            <Link
-              key={link.title}
-              href={link.href}
-              className="hover:text-primary-500 dark:hover:text-primary-400 font-medium text-gray-900 dark:text-gray-100"
-            >
-              {link.title}
-            </Link>
-          ))}
-      </nav>
-      <div className="flex flex-1 items-center justify-end gap-2 md:gap-4">
-        <SearchButton />
-        <ThemeSwitch openMenu={openMenu} setOpenMenuAction={setOpenMenu} />
+        <nav className="hidden flex-1 justify-center space-x-6 sm:flex">
+          {headerNavLinks
+            .filter((link) => link.href !== '/')
+            .map((link) => (
+              <Link
+                key={link.title}
+                href={link.href}
+                className="hover:text-primary-500 dark:hover:text-primary-400 font-medium text-gray-900 dark:text-gray-100"
+              >
+                {link.title}
+              </Link>
+            ))}
+        </nav>
 
-        <Link
-          href="https://kartonobinsaleh.substack.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-primary-500 hover:bg-primary-600 hidden rounded-lg px-4 py-2 text-sm font-semibold text-white transition-colors sm:block"
-        >
-          Join Newsletter
-        </Link>
+        <div className="flex items-center gap-2 md:gap-4">
+          <SearchButton />
+          <ThemeSwitch openMenu={openMenu} setOpenMenuAction={setOpenMenu} />
 
-        <MobileNav openMenu={openMenu} setOpenMenuAction={setOpenMenu} />
+          <Link
+            href="https://kartonobinsaleh.substack.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-primary-500 hover:bg-primary-600 hidden rounded-lg px-4 py-2 text-sm font-semibold text-white transition-colors sm:block"
+          >
+            Join Newsletter
+          </Link>
+
+          <MobileNav openMenu={openMenu} setOpenMenuAction={setOpenMenu} />
+        </div>
       </div>
     </header>
   )
