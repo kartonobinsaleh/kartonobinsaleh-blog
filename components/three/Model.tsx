@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-import { Center, useGLTF, useAnimations } from '@react-three/drei'
+import { useGLTF, useAnimations } from '@react-three/drei'
 import { Group } from 'three'
 
 interface ModelProps {
@@ -22,10 +22,8 @@ export function Model({ isMobile }: ModelProps) {
   }, [actions])
 
   return (
-    <Center top={false}>
-      <group ref={group} scale={isMobile ? 1 : 0.8}>
-        <primitive object={scene} />
-      </group>
-    </Center>
+    <group ref={group} scale={isMobile ? 1 : 0.8}>
+      <primitive object={scene} />
+    </group>
   )
 }
