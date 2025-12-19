@@ -5,7 +5,7 @@ const siteMetadata = {
   headerTitle: 'kartonobinsaleh',
   description:
     'Blog tentang software development, tutorial, tips, dan proyek nyata dari nol sampai mahir',
-  language: 'en-us',
+  language: 'id',
   theme: 'system', // system, dark or light
   siteUrl: 'https://kartonobinsaleh.com',
   siteRepo: 'https://github.com/kartonobinsaleh/kartonobinsaleh-blog.git',
@@ -23,7 +23,7 @@ const siteMetadata = {
   instagram: 'https://www.instagram.com',
   medium: 'https://medium.com',
   bluesky: 'https://bsky.app/',
-  locale: 'en-US',
+  locale: 'id-ID',
   // set to true if you want a navbar fixed to the top
   stickyNav: false,
   analytics: {
@@ -82,7 +82,7 @@ const siteMetadata = {
       // example: https://giscus.app/themes/custom_example.css
       themeURL: '',
       // This corresponds to the `data-lang="en"` in giscus's configurations
-      lang: 'en',
+      lang: 'id',
     },
   },
   search: {
