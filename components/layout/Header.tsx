@@ -1,7 +1,7 @@
 'use client'
 
 import headerNavLinks from '@/data/headerNavLinks'
-import Logo from '@/data/logo.png'
+import Logo from '@/data/logo.webp'
 import Link from '../ui/Link'
 import MobileNav from '../navigation/MobileNav'
 import ThemeSwitch from '../navigation/ThemeSwitch'
