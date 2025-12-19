@@ -1,18 +1,19 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'Next.js Starter Blog',
-  author: 'Tails Azimuth',
+  title: 'Kartono bin Saleh | Fullstack Web Developer',
+  author: 'Kartono bin Saleh',
   headerTitle: 'kartonobinsaleh',
-  description: 'A blog created with Next.js and Tailwind.css',
+  description:
+    'Blog tentang software development, tutorial, tips, dan proyek nyata dari nol sampai mahir',
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
-  siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog',
+  siteUrl: 'https://kartonobinsaleh.com',
+  siteRepo: 'https://github.com/kartonobinsaleh/kartonobinsaleh-blog.git',
   siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.png`,
   socialBanner: `${process.env.BASE_PATH || ''}/static/images/twitter-card.png`,
   mastodon: 'https://mastodon.social/@mastodonuser',
-  email: 'address@yoursite.com',
-  github: 'https://github.com',
+  email: 'kartono.saleh@gmail.com',
+  github: 'https://github.com/kartonobinsaleh',
   x: 'https://twitter.com/x',
   // twitter: 'https://twitter.com/Twitter',
   facebook: 'https://facebook.com',
