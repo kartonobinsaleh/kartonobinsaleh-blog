@@ -12,56 +12,47 @@ import Image from 'next/image'
 
 function useIsScrollTop() {
   const [isTop, setIsTop] = useState(true)
-  useEffect(() => {
-    function onScroll() {
-      setIsTop(window.scrollY <= 0)
-    }
-    window.addEventListener('scroll', onScroll)
 
-    return () => {
-      window.removeEventListener('scroll', onScroll)
-    }
+  useEffect(() => {
+    const onScroll = () => setIsTop(window.scrollY <= 0)
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   return isTop
 }
 
-const Header = () => {
+export default function Header() {
   const isTop = useIsScrollTop()
   const [openMenu, setOpenMenu] = useState<'theme' | 'mobile' | null>(null)
 
   const headerClass =
-    `sticky top-0 z-50 w-full py-6 transition-all duration-300 ` +
+    `sticky top-0 z-50 w-full py-4 sm:py-6 transition-all duration-300 ` +
     (isTop
-      ? 'bg-white/60 dark:bg-gray-950/60 backdrop-blur-md backdrop-saturate-150'
+      ? 'bg-white/60 backdrop-blur-md backdrop-saturate-150 dark:bg-gray-950/60'
       : 'bg-white shadow dark:bg-gray-950')
 
   return (
     <header className={headerClass}>
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 sm:px-6 xl:px-0">
-        {/* Logo */}
-        <div className="flex items-center">
-          <Link href="/" aria-label={siteMetadata.headerTitle}>
-            <div className="flex items-center justify-center gap-2">
-              <div className="h-8 w-8 overflow-hidden rounded-full">
-                <Image
-                  src={Logo}
-                  alt="Logo"
-                  width={40}
-                  height={40}
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              {typeof siteMetadata.headerTitle === 'string' ? (
-                <div className="hidden h-6 text-xl font-bold sm:block">
-                  {siteMetadata.headerTitle}
-                </div>
-              ) : (
-                siteMetadata.headerTitle
-              )}
-            </div>
-          </Link>
-        </div>
+        <Link href="/" aria-label={siteMetadata.headerTitle}>
+          <div className="flex items-center gap-2">
+            <Image
+              src={Logo}
+              alt="Logo"
+              width={40}
+              height={40}
+              className="h-7 w-7 rounded-full object-cover sm:h-8 sm:w-8 md:h-10 md:w-10"
+            />
+            {typeof siteMetadata.headerTitle === 'string' ? (
+              <span className="hidden text-base font-bold sm:inline md:text-xl">
+                {siteMetadata.headerTitle}
+              </span>
+            ) : (
+              siteMetadata.headerTitle
+            )}
+          </div>
+        </Link>
 
         <nav className="hidden flex-1 justify-center space-x-6 sm:flex">
           {headerNavLinks
@@ -96,5 +87,3 @@ const Header = () => {
     </header>
   )
 }
-
-export default Header
