@@ -5,8 +5,8 @@ import Scene from '../three/Scene'
 
 export default function HomeHero() {
   return (
-    <section className="relative w-full bg-gray-50 py-10 sm:py-12 md:py-20 dark:bg-gray-900">
-      <div className="mx-auto flex min-h-[80vh] max-w-7xl flex-col gap-10 px-4 lg:min-h-0 lg:flex-row lg:items-center">
+    <section className="relative w-full bg-gray-50 py-12 sm:py-12 md:py-20 dark:bg-gray-900">
+      <div className="mx-auto flex min-h-[80vh] max-w-7xl flex-col gap-10 px-4 sm:px-6 lg:min-h-0 lg:flex-row lg:items-center xl:px-0">
         <div className="flex flex-1 flex-col justify-center space-y-6 text-center lg:text-left">
           <h1 className="text-3xl font-extrabold text-gray-900 sm:text-4xl lg:text-6xl dark:text-gray-100">
             Start from Zero, Learn by Building
