@@ -15,7 +15,7 @@ const siteMetadata = {
   email: 'kartono.saleh@gmail.com',
   github: 'https://github.com/kartonobinsaleh',
   x: 'https://twitter.com/x',
-  // twitter: 'https://twitter.com/Twitter',
+  twitter: 'https://twitter.com/Twitter',
   facebook: 'https://www.facebook.com/kartonobinsaleh/',
   youtube: 'https://www.youtube.com/@kartonobinsaleh',
   linkedin: 'https://www.linkedin.com/in/kartonobinsaleh/',
