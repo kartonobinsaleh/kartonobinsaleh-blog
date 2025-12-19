@@ -19,11 +19,10 @@ export default function Footer() {
           {/* <SocialIcon kind="threads" href={siteMetadata.threads} size={6} /> */}
           {/* <SocialIcon kind="medium" href={siteMetadata.medium} size={6} /> */}
         </div>
-        <div className="flex space-x-2 text-sm text-gray-500 dark:text-gray-400">
-          <div>{`© ${new Date().getFullYear()}`}</div>
-          <div>{siteMetadata.author}</div>
-          <div>{` • `}</div>
-          <div className="text-sm text-gray-500 dark:text-gray-400">Made with ❤️ using Next.js</div>
+        <div className="flex flex-col items-center justify-center gap-1 text-sm text-gray-500 sm:flex-row sm:space-x-2 dark:text-gray-400">
+          <div>{`© ${new Date().getFullYear()} ${siteMetadata.author}`}</div>
+          <div className="hidden sm:block">{` • `}</div>
+          <div>Made with ❤️ using Next.js</div>
         </div>
       </div>
     </footer>
