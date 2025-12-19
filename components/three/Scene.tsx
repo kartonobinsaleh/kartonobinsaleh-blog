@@ -33,10 +33,10 @@ export default function Scene() {
   }, [])
 
   return (
-    <div style={{ width: '100%', height: '70vh' }}>
+    <div className="h-full w-full">
       <Canvas
         frameloop="always"
-        shadows={true}
+        shadows
         camera={{
           position: isMobile ? [5, 2.6, 6] : [1, 1.2, 8],
           fov: isMobile ? 35 : 25,
@@ -65,7 +65,6 @@ export default function Scene() {
 
           <Environment preset="city" />
           <CameraRig isMobile={isMobile} />
-
           <Model isMobile={isMobile} />
 
           <EffectComposer multisampling={4}>

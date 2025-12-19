@@ -21,8 +21,10 @@ export function Model({ isMobile }: ModelProps) {
     }
   }, [actions])
 
+  const scale = isMobile ? 1 : 0.8
+
   return (
-    <group ref={group} scale={isMobile ? 1 : 0.8}>
+    <group ref={group} scale={scale}>
       <primitive object={scene} />
     </group>
   )
