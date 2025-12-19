@@ -1,6 +1,6 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'Kartono bin Saleh | Fullstack Web Developer',
+  title: 'Kartono bin Saleh',
   author: 'Kartono bin Saleh',
   headerTitle: 'kartonobinsaleh',
   description:
