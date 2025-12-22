@@ -1,11 +1,7 @@
 import Link from '@/components/ui/Link'
-import Tag from '@/components/common/Tag'
 import siteMetadata from '@/data/siteMetadata'
-import { formatDate } from 'pliny/utils/formatDate'
-import NewsletterForm from 'pliny/ui/NewsletterForm'
 import { sortPosts, allCoreContent } from 'pliny/utils/contentlayer'
 import { allBlogs } from 'contentlayer/generated'
-import Hero from '@/components/common/HomeHero'
 import SectionContainer from '@/components/layout/SectionContainer'
 import Newsletter from '@/components/common/NewsLetter'
 import Card from '@/components/common/Card'
@@ -22,7 +18,7 @@ export default async function HomePage() {
       <HomeHero />
 
       <SectionContainer id="latest-posts">
-        <div className="space-y-2 pt-6 pb-8 md:space-y-5">
+        <div className="space-y-2 py-6 md:space-y-5">
           <h1 className="text-2xl leading-7 font-bold tracking-tight text-gray-900 sm:text-3xl md:text-4xl dark:text-gray-100">
             Apa yang baru?
           </h1>
@@ -43,7 +39,7 @@ export default async function HomePage() {
           })}
         </ul>
         {posts.length > MAX_DISPLAY && (
-          <div className="flex justify-end text-base leading-6 font-medium">
+          <div className="flex justify-end pt-6 text-base leading-6 font-medium">
             <Link
               href="/blog"
               className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"

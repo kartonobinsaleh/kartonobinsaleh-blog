@@ -1,6 +1,21 @@
 import Link from '@/components/ui/Link'
 import Image from 'next/image'
 
+export const unsplashImages = [
+  'photo-1498050108023-c5249f4df085',
+  'photo-1518770660439-4636190af475',
+  'photo-1517433456452-f9633a875f6f',
+  'photo-1555066931-4365d14bab8c',
+  'photo-1519389950473-47ba0277781c',
+]
+
+export const getUnsplashImage = (seed: string) => {
+  const index =
+    Math.abs(seed.split('').reduce((a, c) => a + c.charCodeAt(0), 0)) % unsplashImages.length
+
+  return `https://images.unsplash.com/${unsplashImages[index]}?w=800&auto=format&fit=crop&q=80`
+}
+
 interface CardProps {
   title: string
   summary?: string
@@ -13,9 +28,11 @@ export default function Card({
   title,
   summary,
   slug,
-  imageUrl = 'https://picsum.photos/400/200',
+  imageUrl = 'https://source.unsplash.com/400x200/?technology',
   minHeight = '380px',
 }: CardProps) {
+  const imageSrc = getUnsplashImage(slug)
+
   return (
     <Link href={`/blog/${slug}`} className="block">
       <article
@@ -24,7 +41,7 @@ export default function Card({
       >
         <div className="relative h-48 w-full overflow-hidden rounded-t-xl">
           <Image
-            src={`${imageUrl}?random=${slug}`}
+            src={imageSrc}
             alt={title}
             width={400}
             height={200}

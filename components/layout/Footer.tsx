@@ -3,7 +3,7 @@ import SocialIcon from '@/components/social'
 
 export default function Footer() {
   return (
-    <footer className="mt-16 w-full bg-gray-50 py-16 dark:bg-gray-900">
+    <footer className="mt-16 w-full bg-gray-50 py-16 dark:bg-gray-950">
       <div className="flex flex-col items-center gap-4">
         <div className="flex space-x-2 text-sm text-gray-500 dark:text-gray-400">Ikuti saya:</div>
         <div className="flex space-x-4">
