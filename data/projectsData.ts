@@ -1,26 +1,53 @@
-interface Project {
+export interface Project {
+  slug: string
   title: string
-  description: string
+  summary: string
+  description?: string
+
+  coverImage: string
+
   href?: string
-  imgSrc?: string
+  demoUrl?: string
+  githubUrl?: string
+
+  tech: string[]
+  category?: 'Web App' | 'Landing Page' | 'Open Source' | 'Tool'
+
+  year?: number
+  status?: 'Live' | 'In Progress' | 'Archived'
 }
 
 const projectsData: Project[] = [
   {
-    title: 'A Search Engine',
-    description: `What if you could look up any information in the world? Webpages, images, videos
-    and more. Google has many features to help you find exactly what you're looking
-    for.`,
-    imgSrc: '/static/images/google.png',
-    href: 'https://www.google.com',
+    slug: 'school-dashboard',
+    title: 'School Management Dashboard',
+    summary: 'Web dashboard for managing students, classes, and academic reports.',
+    description:
+      'A full-featured school management system built to simplify academic administration.',
+    coverImage: '/static/images/time-machine.jpg',
+
+    href: '/projects/school-dashboard',
+    demoUrl: 'https://school-dashboard.demo',
+    githubUrl: 'https://github.com/username/school-dashboard',
+
+    tech: ['Next.js', 'Tailwind CSS', 'Supabase'],
+    category: 'Web App',
+    year: 2024,
+    status: 'Live',
   },
   {
-    title: 'The Time Machine',
-    description: `Imagine being able to travel back in time or to the future. Simple turn the knob
-    to the desired date and press "Go". No more worrying about lost keys or
-    forgotten headphones with this simple yet affordable solution.`,
-    imgSrc: '/static/images/time-machine.jpg',
-    href: '/blog/the-time-machine',
+    slug: 'personal-blog',
+    title: 'Personal Tech Blog',
+    summary: 'A fast, SEO-friendly personal blog built with Next.js and MDX.',
+    coverImage: '/static/images/google.png',
+
+    href: '/projects/personal-blog',
+    githubUrl: 'https://github.com/username/blog',
+
+    tech: ['Next.js', 'Contentlayer', 'Tailwind CSS'],
+    category: 'Open Source',
+    year: 2023,
+    status: 'Live',
   },
 ]
 
