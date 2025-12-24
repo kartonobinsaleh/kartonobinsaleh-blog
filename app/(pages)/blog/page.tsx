@@ -5,7 +5,7 @@ import ListLayout from '@/layouts/ListLayoutWithTags'
 import SectionContainer from '@/components/layout/SectionContainer'
 import { Metadata } from 'next'
 
-const POSTS_PER_PAGE = 5
+const POSTS_PER_PAGE = 6
 
 export const metadata: Metadata = genPageMetadata({ title: 'Blog' })
 

@@ -4,7 +4,7 @@ import { allBlogs } from 'contentlayer/generated'
 import { notFound } from 'next/navigation'
 import SectionContainer from '@/components/layout/SectionContainer'
 
-const POSTS_PER_PAGE = 5
+const POSTS_PER_PAGE = 6
 
 export const generateStaticParams = async () => {
   const totalPages = Math.ceil(allBlogs.length / POSTS_PER_PAGE)

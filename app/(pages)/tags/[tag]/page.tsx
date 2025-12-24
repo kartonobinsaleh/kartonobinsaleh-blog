@@ -6,8 +6,9 @@ import { allBlogs } from 'contentlayer/generated'
 import tagData from 'app/tag-data.json'
 import { genPageMetadata } from 'app/seo'
 import { Metadata } from 'next'
+import SectionContainer from '@/components/layout/SectionContainer'
 
-const POSTS_PER_PAGE = 5
+const POSTS_PER_PAGE = 6
 
 export async function generateMetadata(props: {
   params: Promise<{ tag: string }>
@@ -49,11 +50,13 @@ export default async function TagPage(props: { params: Promise<{ tag: string }> 
   }
 
   return (
-    <ListLayout
-      posts={filteredPosts}
-      initialDisplayPosts={initialDisplayPosts}
-      pagination={pagination}
-      title={title}
-    />
+    <SectionContainer>
+      <ListLayout
+        posts={filteredPosts}
+        initialDisplayPosts={initialDisplayPosts}
+        pagination={pagination}
+        title={title}
+      />
+    </SectionContainer>
   )
 }
