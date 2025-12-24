@@ -8,7 +8,7 @@ import Link from '@/components/ui/Link'
 import tagData from 'app/tag-data.json'
 import { useEffect, useRef, useState } from 'react'
 import Pagination, { PaginationProps } from '@/components/navigation/Pagination'
-import Card from '@/components/common/Card'
+import ArticleCard from '@/components/common/ArticleCard'
 
 interface ListLayoutProps {
   posts: CoreContent<Blog>[]
@@ -134,7 +134,7 @@ export default function ListLayoutWithTags({
 
           return (
             <li key={slug}>
-              <Card title={title} summary={summary} slug={slug} />
+              <ArticleCard title={title} summary={summary} slug={slug} />
             </li>
           )
         })}

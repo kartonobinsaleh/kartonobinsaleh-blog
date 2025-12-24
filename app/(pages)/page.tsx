@@ -4,7 +4,7 @@ import { sortPosts, allCoreContent } from 'pliny/utils/contentlayer'
 import { allBlogs } from 'contentlayer/generated'
 import SectionContainer from '@/components/layout/SectionContainer'
 import Newsletter from '@/components/common/NewsLetter'
-import Card from '@/components/common/Card'
+import ArticleCard from '@/components/common/ArticleCard'
 import HomeHero from '@/components/common/HomeHero'
 
 const MAX_DISPLAY = 6
@@ -33,7 +33,7 @@ export default async function HomePage() {
             const { slug, title, summary } = post
             return (
               <li key={slug}>
-                <Card title={title} summary={summary} slug={slug} />
+                <ArticleCard title={title} summary={summary} slug={slug} />
               </li>
             )
           })}

@@ -24,7 +24,7 @@ interface CardProps {
   minHeight?: string
 }
 
-export default function Card({ title, summary, slug, minHeight = '380px' }: CardProps) {
+export default function ArticleCard({ title, summary, slug, minHeight = '380px' }: CardProps) {
   const imageSrc = getUnsplashImage(slug)
 
   return (
