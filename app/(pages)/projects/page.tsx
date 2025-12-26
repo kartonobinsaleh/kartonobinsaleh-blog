@@ -1,12 +1,22 @@
 import projectsData from '@/data/projectsData'
 import ProjectCard from '@/components/common/ProjectCard'
-import { genPageMetadata } from 'app/seo'
+import Pagination from '@/components/navigation/Pagination'
 import SectionContainer from '@/components/layout/SectionContainer'
+import { genPageMetadata } from 'app/seo'
 import { Metadata } from 'next'
+
+const PROJECTS_PER_PAGE = 6
 
 export const metadata: Metadata = genPageMetadata({ title: 'Projects' })
 
-export default function ProjectsPage() {
+export default function ProjectsPage({ searchParams }: { searchParams: { page?: string } }) {
+  const currentPage = Number(searchParams.page ?? 1)
+  const totalPages = Math.ceil(projectsData.length / PROJECTS_PER_PAGE)
+
+  const start = (currentPage - 1) * PROJECTS_PER_PAGE
+  const end = start + PROJECTS_PER_PAGE
+  const displayProjects = projectsData.slice(start, end)
+
   return (
     <SectionContainer>
       <div className="pt-6">
@@ -15,26 +25,18 @@ export default function ProjectsPage() {
         </h1>
 
         <p className="mb-8 text-lg leading-7 text-gray-500 dark:text-gray-400">
-          Showcase your projects with a hero image (16 x 9)
+          Kumpulan proyek yang pernah saya kerjakan
         </p>
 
         <ul className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {projectsData.map((project) => (
+          {displayProjects.map((project) => (
             <li key={project.slug}>
-              <ProjectCard
-                title={project.title}
-                summary={project.summary}
-                slug={project.slug}
-                coverImage={project.coverImage}
-                href={project.href}
-                demoUrl={project.demoUrl}
-                githubUrl={project.githubUrl}
-                tech={project.tech}
-                status={project.status}
-              />
+              <ProjectCard {...project} />
             </li>
           ))}
         </ul>
+
+        {totalPages > 1 && <Pagination currentPage={currentPage} totalPages={totalPages} />}
       </div>
     </SectionContainer>
   )
