@@ -47,7 +47,7 @@ const projectsData: Project[] = [
     tech: ['Next.js', 'Contentlayer', 'Tailwind CSS'],
     category: 'Open Source',
     year: 2023,
-    status: 'Live',
+    status: 'Archived',
   },
 ]
 
