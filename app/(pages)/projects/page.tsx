@@ -7,15 +7,13 @@ import { Metadata } from 'next'
 
 const PROJECTS_PER_PAGE = 6
 
-export const metadata: Metadata = genPageMetadata({ title: 'Projects' })
+export const metadata: Metadata = genPageMetadata({
+  title: 'Projects',
+})
 
-export default function ProjectsPage({ searchParams }: { searchParams: { page?: string } }) {
-  const currentPage = Number(searchParams.page ?? 1)
+export default function ProjectsPage() {
   const totalPages = Math.ceil(projectsData.length / PROJECTS_PER_PAGE)
-
-  const start = (currentPage - 1) * PROJECTS_PER_PAGE
-  const end = start + PROJECTS_PER_PAGE
-  const displayProjects = projectsData.slice(start, end)
+  const displayProjects = projectsData.slice(0, PROJECTS_PER_PAGE)
 
   return (
     <SectionContainer>
@@ -36,7 +34,7 @@ export default function ProjectsPage({ searchParams }: { searchParams: { page?: 
           ))}
         </ul>
 
-        {totalPages > 1 && <Pagination currentPage={currentPage} totalPages={totalPages} />}
+        {totalPages > 1 && <Pagination currentPage={1} totalPages={totalPages} />}
       </div>
     </SectionContainer>
   )
