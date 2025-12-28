@@ -10,7 +10,7 @@ const siteMetadata = {
   siteUrl: 'https://kartonobinsaleh.com',
   siteRepo: 'https://github.com/kartonobinsaleh/kartonobinsaleh-blog.git',
   siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.png`,
-  socialBanner: `${process.env.BASE_PATH || ''}/static/images/twitter-card.png`,
+  socialBanner: `${process.env.BASE_PATH || ''}/static/images/banner.webp`,
   mastodon: 'https://mastodon.social/@mastodonuser',
   email: 'kartono.saleh@gmail.com',
   github: 'https://github.com/kartonobinsaleh',
