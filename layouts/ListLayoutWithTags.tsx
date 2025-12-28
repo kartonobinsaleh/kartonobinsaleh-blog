@@ -122,10 +122,10 @@ export default function ListLayoutWithTags({
         </div>
 
         {showLeftFade && (
-          <div className="pointer-events-none absolute top-0 left-0 h-full w-8 bg-gradient-to-r from-white to-transparent dark:from-gray-900" />
+          <div className="pointer-events-none absolute top-0 -left-1 h-full w-8 bg-gradient-to-r from-white to-transparent dark:from-[#0b0b0b]" />
         )}
 
-        <div className="pointer-events-none absolute top-0 right-0 h-full w-8 bg-gradient-to-l from-white to-transparent dark:from-gray-900" />
+        <div className="pointer-events-none absolute top-0 -right-1 h-full w-8 bg-gradient-to-l from-white to-transparent dark:from-[#0b0b0b]" />
       </div>
 
       <ul className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
