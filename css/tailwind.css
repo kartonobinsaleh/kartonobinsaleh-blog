@@ -8,8 +8,15 @@
 @theme {
   /* Font families */
   --font-sans:
-    var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    var(--font-inter), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-heading:
+    var(--font-inter), ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+  /* Typography Defaults */
+  --font-size-base: 1.125rem; /* 18px */
+  --line-height-base: 1.75;
 
   /* Colors */
   /* Copied from https://tailwindcss.com/docs/theme#default-theme-variable-reference */
@@ -66,6 +73,33 @@
     border-color: var(--color-gray-200, currentColor);
   }
 
+  body {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    color: var(--color-gray-900);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: var(--tracking-tight);
+  }
+
+  .dark h1,
+  .dark h2,
+  .dark h3,
+  .dark h4,
+  .dark h5,
+  .dark h6 {
+    color: var(--color-gray-100);
+  }
+
   a,
   button {
     outline-color: var(--color-primary-500);
@@ -95,8 +129,16 @@
   }
 
   .prose {
+    --tw-prose-body: var(--color-gray-800);
+    --tw-prose-headings: var(--color-gray-900);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+
     & a {
       color: var(--color-primary-500);
+      font-weight: 500;
+      text-decoration: underline;
+      text-underline-offset: 4px;
       &:hover {
         color: var(--color-primary-600);
       }
@@ -104,30 +146,57 @@
         color: var(--color-primary-400);
       }
     }
-    & :where(h1, h2) {
-      font-weight: 700;
-      letter-spacing: var(--tracking-tight);
+
+    & :where(h1, h2, h3, h4) {
+      font-family: var(--font-heading);
+      margin-top: 2em;
+      margin-bottom: 0.8em;
+    }
+
+    & h1 {
+      font-size: 2.5rem;
+    }
+    & h2 {
+      font-size: 1.875rem;
+      border-bottom: 1px solid var(--color-gray-100);
+      padding-bottom: 0.3em;
     }
     & h3 {
-      font-weight: 600;
+      font-size: 1.5rem;
     }
+
+    & p {
+      margin-top: 1.25em;
+      margin-bottom: 1.25em;
+    }
+
     & :where(code):not(pre code) {
-      color: var(--color-indigo-500);
+      color: var(--color-primary-600);
+      background-color: var(--color-gray-100);
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-weight: 500;
     }
   }
 
   .prose-invert {
+    --tw-prose-body: var(--color-gray-200);
+    --tw-prose-headings: var(--color-gray-100);
+
     & a {
       color: var(--color-primary-500);
       &:hover {
         color: var(--color-primary-400);
       }
-      & code {
-        color: var(--color-primary-400);
-      }
     }
-    & :where(h1, h2, h3, h4, h5, h6) {
-      color: var(--color-gray-100);
+
+    & h2 {
+      border-bottom-color: var(--color-gray-800);
+    }
+
+    & :where(code):not(pre code) {
+      color: var(--color-primary-400);
+      background-color: var(--color-gray-800);
     }
   }
 

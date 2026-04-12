@@ -19,10 +19,10 @@ export default async function HomePage() {
 
       <SectionContainer id="latest-posts">
         <div className="space-y-2 py-6 md:space-y-5">
-          <h1 className="text-2xl leading-7 font-bold tracking-tight text-gray-900 sm:text-3xl md:text-4xl dark:text-gray-100">
+          <h1 className="font-heading text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-gray-100">
             Apa yang baru?
           </h1>
-          <p className="text-base leading-6 text-gray-500 dark:text-gray-400">
+          <p className="text-lg leading-relaxed text-gray-500 dark:text-gray-400">
             {siteMetadata.description}
           </p>
         </div>

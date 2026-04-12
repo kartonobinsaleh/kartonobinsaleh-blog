@@ -8,10 +8,10 @@ export default function HomeHero() {
     <section className="relative w-full bg-gray-50 py-12 sm:py-12 md:py-20 dark:bg-gray-900">
       <div className="mx-auto flex min-h-[80vh] max-w-7xl flex-col gap-10 px-4 sm:px-6 lg:min-h-0 lg:flex-row lg:items-center xl:px-0">
         <div className="flex flex-1 flex-col justify-center space-y-6 text-center lg:text-left">
-          <h1 className="text-3xl font-extrabold text-gray-900 sm:text-4xl lg:text-6xl dark:text-gray-100">
+          <h1 className="font-heading text-3xl font-extrabold text-gray-900 sm:text-4xl lg:text-6xl dark:text-gray-100">
             Start from Zero, Learn by Building
           </h1>
-          <p className="text-base text-gray-700 sm:text-lg lg:text-xl dark:text-gray-300">
+          <p className="text-lg leading-relaxed text-gray-700 sm:text-xl dark:text-gray-300">
             Belajar dari nol lewat tutorials, tips, dan real projects di dunia software development.
           </p>
           <div className="mt-6">

@@ -45,7 +45,7 @@ export default function Header() {
               className="h-7 w-7 rounded-full object-cover sm:h-8 sm:w-8 md:h-10 md:w-10"
             />
             {typeof siteMetadata.headerTitle === 'string' ? (
-              <span className="hidden text-base font-bold sm:inline md:text-xl">
+              <span className="font-heading hidden text-base font-bold sm:inline md:text-xl">
                 {siteMetadata.headerTitle}
               </span>
             ) : (

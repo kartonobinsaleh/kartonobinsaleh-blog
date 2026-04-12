@@ -34,11 +34,8 @@ export default function ArticleCard({
   const imageSrc = imageUrl || getUnsplashImage(slug)
 
   return (
-    <Link href={`/blog/${slug}`} className="group block">
-      <article
-        className="flex flex-col justify-between rounded-xl border border-gray-200 bg-white transition hover:border-gray-300 dark:border-gray-700 dark:bg-gray-950"
-        style={{ minHeight }}
-      >
+    <Link href={`/blog/${slug}`} className="group block h-full">
+      <article className="flex h-full flex-col justify-between rounded-xl border border-gray-200 bg-white transition hover:border-gray-300 dark:border-gray-700 dark:bg-gray-950">
         <div className="px-4 pt-4">
           <div className="relative h-48 w-full overflow-hidden rounded-xl">
             <Image
@@ -52,10 +49,10 @@ export default function ArticleCard({
         </div>
 
         <div className="flex flex-1 flex-col gap-2 p-4">
-          <h2 className="line-clamp-2 text-xl font-bold text-gray-900 dark:text-gray-100">
+          <h2 className="font-heading line-clamp-2 text-2xl font-bold text-gray-900 dark:text-gray-100">
             {title}
           </h2>
-          <p className="line-clamp-3 text-gray-500 dark:text-gray-400">{summary}</p>
+          <p className="line-clamp-3 text-base text-gray-500 dark:text-gray-400">{summary}</p>
         </div>
       </article>
     </Link>
