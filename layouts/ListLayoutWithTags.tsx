@@ -130,11 +130,16 @@ export default function ListLayoutWithTags({
 
       <ul className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {displayPosts.map((post) => {
-          const { slug, title, summary } = post
+          const { slug, title, summary, images } = post
 
           return (
             <li key={slug}>
-              <ArticleCard title={title} summary={summary} slug={slug} />
+              <ArticleCard
+                title={title}
+                summary={summary}
+                slug={slug}
+                imageUrl={images ? images[0] : undefined}
+              />
             </li>
           )
         })}

@@ -6,9 +6,12 @@ import Image from '../ui/Image'
 import CustomLink from '../ui/Link'
 import TableWrapper from './TableWrapper'
 
+import YouTube from '../ui/YouTube'
+
 export const components: MDXComponents = {
   Image,
   TOCInline,
+  YouTube,
   a: CustomLink,
   pre: Pre,
   table: TableWrapper,

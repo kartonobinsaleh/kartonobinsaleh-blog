@@ -1,0 +1,77 @@
+---
+title: 'How to Installing MySQL and MySQL Workbench on Ubuntu 22.04'
+date: '2024-04-13'
+tags: ['mysql', 'database', 'ubuntu', 'tutorial']
+draft: false
+summary: 'Panduan langkah demi langkah cara menginstal MySQL Server dan MySQL Workbench di Ubuntu 22.04 untuk pemula.'
+images: ['/static/images/blog/ubuntu/mysql-workbench.webp']
+authors: ['kartonobinsaleh']
+---
+
+Memasang database engine merupakan salah satu langkah awal yang krusial bagi setiap developer. **MySQL** tetap menjadi salah satu pilihan terpopuler karena keandalan dan ekosistemnya yang luas. Untuk memudahkan manajemen database, kita juga akan memasang **MySQL Workbench** sebagai antarmuka grafis (GUI).
+
+Berikut adalah video tutorial lengkap untuk memandu Anda melakukan instalasi secara visual:
+
+<YouTube id="D8kFwOk6K4g" />
+
+---
+
+## Tahapan Instalasi
+
+### 1. Update Repositori
+Langkah pertama yang selalu disarankan adalah memastikan daftar paket sistem Anda sudah yang terbaru:
+
+```bash
+sudo apt update
+```
+
+### 2. Menginstal MySQL Server
+Setelah itu, instal paket MySQL Server dengan perintah berikut:
+
+```bash
+sudo apt install mysql-server -y
+```
+
+Pastikan layanan MySQL sudah berjalan:
+```bash
+sudo systemctl status mysql
+```
+
+### 3. Mengamankan Instalasi MySQL
+MySQL dilengkapi dengan script keamanan untuk menghapus pengaturan default yang tidak aman. Jalankan:
+
+```bash
+sudo mysql_secure_installation
+```
+Ikuti petunjuk di layar untuk mengatur password root dan menghapus database test.
+
+### 4. Menginstal MySQL Workbench
+Ada dua metode populer untuk menginstal MySQL Workbench di Ubuntu 22.04:
+
+#### Metode A: Melalui APT (Recommended)
+```bash
+sudo apt install mysql-workbench -y
+```
+
+#### Metode B: Melalui Snap
+Jika Anda lebih suka menggunakan Snap, jalankan:
+```bash
+sudo snap install mysql-workbench-community
+```
+
+---
+
+## Tips Tambahan
+Untuk mulai menggunakan MySQL melalui terminal, Anda bisa mengetikkan:
+```bash
+sudo mysql -u root -p
+```
+
+MySQL Workbench akan sangat membantu Anda dalam merancang desain database, menjalankan query secara visual, serta memantau performa database Anda dengan lebih mudah.
+
+Jika Anda menemukan kesulitan saat instalasi, silakan tinggalkan pertanyaan di kolom komentar!
+
+**Terhubung dengan saya:**
+- **Email**: kartono.saleh@gmail.com
+- **Github**: [kartonobinsaleh](https://github.com/kartonobinsaleh)
+- **Instagram**: [@kartonobinsaleh](https://www.instagram.com/kartonobinsaleh/)

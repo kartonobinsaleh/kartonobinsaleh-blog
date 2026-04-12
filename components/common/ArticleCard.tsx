@@ -24,8 +24,14 @@ interface CardProps {
   minHeight?: string
 }
 
-export default function ArticleCard({ title, summary, slug, minHeight = '380px' }: CardProps) {
-  const imageSrc = getUnsplashImage(slug)
+export default function ArticleCard({
+  title,
+  summary,
+  slug,
+  imageUrl,
+  minHeight = '380px',
+}: CardProps) {
+  const imageSrc = imageUrl || getUnsplashImage(slug)
 
   return (
     <Link href={`/blog/${slug}`} className="group block">

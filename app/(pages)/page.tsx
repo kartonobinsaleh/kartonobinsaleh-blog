@@ -30,10 +30,15 @@ export default async function HomePage() {
         <ul className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
           {!posts.length && 'No posts found.'}
           {posts.slice(0, MAX_DISPLAY).map((post) => {
-            const { slug, title, summary } = post
+            const { slug, title, summary, images } = post
             return (
               <li key={slug}>
-                <ArticleCard title={title} summary={summary} slug={slug} />
+                <ArticleCard
+                  title={title}
+                  summary={summary}
+                  slug={slug}
+                  imageUrl={images ? images[0] : undefined}
+                />
               </li>
             )
           })}

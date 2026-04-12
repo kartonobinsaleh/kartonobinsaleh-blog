@@ -1,0 +1,102 @@
+---
+title: 'How To Install and Setup React Native CLI on Ubuntu 22.04'
+date: '2024-04-12'
+tags: ['ubuntu', 'react-native', 'android', 'tutorial']
+draft: false
+summary: 'Panduan lengkap langkah demi langkah untuk melakukan setup environment pengembangan React Native CLI di Ubuntu 22.04.'
+images: ['/static/images/blog/ubuntu/react-native-cli.webp']
+authors: ['kartonobinsaleh']
+---
+
+Jika Anda sudah terbiasa dengan pengembangan aplikasi mobile, Anda mungkin ingin menggunakan **React Native CLI**. Penggunaan CLI ini memerlukan Xcode (untuk iOS) atau Android Studio (untuk Android) untuk memulai.
+
+Jika Anda sudah menginstal salah satu dari alat tersebut, Anda seharusnya bisa langsung mulai dalam beberapa menit. Namun, jika belum terinstal, siapkan waktu sekitar satu jam untuk proses instalasi dan konfigurasi.
+
+Berikut adalah video tutorial lengkapnya bagi Anda yang lebih suka belajar secara visual:
+
+<YouTube id="Hzdsh_YBFKk" />
+
+---
+
+## Daftar Isi Tutorial
+Berdasarkan video di atas, berikut adalah tahapan yang akan kita lalui:
+
+### 1. Install Node.js
+React Native memerlukan Node.js. Kami menyarankan menggunakan versi LTS terbaru.
+Di Ubuntu, Anda bisa menggunakan perintah berikut:
+
+```bash
+curl -sL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+sudo apt install -y nodejs
+```
+
+### 2. Install Java Development Kit (JDK)
+Android Studio memerlukan JDK. Untuk React Native, disarankan menggunakan OpenJDK 17.
+
+```bash
+sudo apt update
+sudo apt install openjdk-17-jdk
+```
+Cek versi untuk memastikan: `java -version`.
+
+### 3. Download & Install Android Studio
+Unduh Android Studio dari [situs resmi Google](https://developer.android.com/studio). 
+Setelah diunduh, ekstrak file tersebut dan jalankan script instalasinya:
+
+```bash
+cd ~/Downloads/android-studio/bin
+./studio.sh
+```
+
+### 4. Install Android SDK
+Saat pertama kali menjalankan Android Studio, ikuti wizard untuk menginstal:
+- Android SDK
+- Android SDK Platform
+- Android Virtual Device (Emulator)
+
+Pastikan juga untuk mencentang **Android SDK Command-line Tools** di bagian SDK Manager.
+
+### 5. Konfigurasi Environment Variable
+Agar terminal mengenali alat Android, kita perlu menambahkan path ke file `.bashrc` atau `.zshrc`.
+
+Buka file konfigurasi:
+```bash
+nano ~/.bashrc
+```
+
+Tambahkan baris berikut di paling bawah:
+```bash
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+```
+
+Simpan (Ctrl+O, Enter) dan keluar (Ctrl+X), lalu terapkan perubahan:
+```bash
+source ~/.bashrc
+```
+
+### 6. Membuat Aplikasi Baru
+Sekarang Anda siap membuat proyek React Native pertama Anda:
+
+```bash
+npx react-native@latest init MyFirstProject
+```
+
+Jalankan aplikasinya:
+```bash
+cd MyFirstProject
+npm start
+# (Di terminal baru)
+npx react-native run-android
+```
+
+---
+
+## Kesimpulan
+Proses setup awal memang memakan waktu, terutama di bagian Android Studio dan SDK. Namun setelah semua terkonfigurasi, Anda bisa mengembangkan aplikasi mobile cross-platform dengan sangat efisien menggunakan React Native.
+
+Jika Anda menghadapi kendala saat instalasi, jangan ragu untuk bertanya di kolom komentar di bawah atau hubungi saya melalui:
+- **Email**: kartono.saleh@gmail.com
+- **Github**: [kartonobinsaleh](https://github.com/kartonobinsaleh)
+- **Instagram**: [@kartonobinsaleh](https://www.instagram.com/kartonobinsaleh/)

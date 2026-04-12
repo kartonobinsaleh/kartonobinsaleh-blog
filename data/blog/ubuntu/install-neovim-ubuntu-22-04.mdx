@@ -1,0 +1,61 @@
+---
+title: 'How to Install Neovim on Ubuntu 22.04'
+date: '2024-04-13'
+tags: ['neovim', 'vim', 'ubuntu', 'editor']
+draft: false
+summary: 'Panduan cara menginstal Neovim di Ubuntu 22.04 menggunakan PPA untuk mendapatkan versi yang lebih baru dan stabil.'
+images: ['/static/images/blog/ubuntu/neovim.webp']
+authors: ['kartonobinsaleh']
+---
+
+**Neovim** adalah kelanjutan dan perluasan dari Vim tradisional. Neovim dibangun untuk pengguna yang menginginkan bagian terbaik dari Vim, namun dengan ekosistem plugin yang lebih modern dan performa yang lebih baik. Bagi banyak developer, Neovim bukan sekadar teks editor, melainkan lingkungan pengembangan yang sangat bisa dikustomisasi.
+
+Simak video tutorial instalasinya di bawah ini:
+
+<YouTube id="6-6KFm9GSh8" />
+
+---
+
+## Langkah Instalasi
+
+Meskipun Ubuntu menyediakan Neovim di repositori default, versinya seringkali sudah tertinggal. Untuk mendapatkan versi yang lebih baru (stable), disarankan menggunakan PPA (Personal Package Archive).
+
+### 1. Tambahkan Repositori PPA
+Buka terminal Anda dan tambahkan repositori resmi Neovim:
+
+```bash
+sudo add-apt-repository ppa:neovim-ppa/stable
+sudo apt update
+```
+
+### 2. Instal Neovim
+Setelah repositori ditambahkan, Anda bisa langsung menginstalnya dengan perintah:
+
+```bash
+sudo apt install neovim
+```
+
+### 3. Verifikasi Instalasi
+Untuk memastikan Neovim sudah terinstal, cek versinya dengan mengetikkan:
+
+```bash
+nvim --version
+```
+
+### 4. Mulai Menggunakan Neovim
+Anda bisa membuka Neovim dengan perintah sederhana:
+```bash
+nvim
+```
+
+---
+
+## Kesimpulan
+Neovim menawarkan fleksibilitas luar biasa bagi para pengguna Vim yang ingin beralih ke editor yang lebih modern tanpa kehilangan efisiensi keyboard-driven. Anda bisa mulai mengeksplorasi konfigurasi `init.lua` untuk membuat Neovim Anda menjadi IDE yang powerful.
+
+Jika Anda memiliki pertanyaan seputar konfigurasi awal Neovim, silakan tulis di kolom komentar!
+
+**Terhubung dengan saya:**
+- **Email**: kartono.saleh@gmail.com
+- **Github**: [kartonobinsaleh](https://github.com/kartonobinsaleh)
+- **Instagram**: [@kartonobinsaleh](https://www.instagram.com/kartonobinsaleh/)

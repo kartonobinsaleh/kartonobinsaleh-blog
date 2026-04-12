@@ -1,0 +1,65 @@
+---
+title: 'How to Install and Set Up Kali Linux on VirtualBox (Ubuntu 22.04)'
+date: '2024-04-12'
+tags: ['kali-linux', 'virtualbox', 'ubuntu', 'cyber-security']
+draft: false
+summary: 'Panduan lengkap cara menginstal dan mengkonfigurasi Kali Linux di dalam VirtualBox menggunakan sistem operasi host Ubuntu 22.04.'
+images: ['/static/images/blog/ubuntu/kalilinux.webp']
+authors: ['kartonobinsaleh']
+---
+
+Menjalankan **Kali Linux** di dalam Virtual Machine (VM) adalah cara terbaik untuk mengeksplorasi alat-alat penetration testing tanpa merusak sistem utama Anda. Dengan VirtualBox, Anda bisa memiliki lingkungan yang terisolasi dan aman untuk belajar cyber security.
+
+Berikut adalah video tutorial langkah demi langkah bagi Anda yang ingin mengikuti proses instalasinya secara visual:
+
+<YouTube id="mlQXRxCz180" />
+
+---
+
+## Persiapan Sebelum Instalasi
+Sebelum mulai, pastikan Anda telah menyiapkan hal-hal berikut:
+- **VirtualBox**: Sudah terinstal di Ubuntu 22.04 Anda.
+- **ISO Kali Linux**: Unduh versi "Installer" dari [situs resmi Kali Linux](https://www.kali.org/get-kali/).
+- **Resources**: Pastikan laptop/PC Anda memiliki minimal RAM 8GB dan ruang disk kosong sekitar 40GB.
+
+## Langkah-Langkah Instalasi
+
+### 1. Membuat Virtual Machine Baru
+Buka VirtualBox dan klik tombol **New**. Berikan nama "Kali Linux", lalu pilih tipe **Linux** dan versi **Debian (64-bit)**. 
+
+### 2. Alokasi Hardware
+- **Memori (RAM)**: Berikan minimal 2GB (4GB lebih disarankan agar lancar).
+- **Processor**: Alokasikan minimal 2 CPU.
+- **Hard Disk**: Buat virtual hard disk baru dengan ukuran minimal 40GB.
+
+### 3. Konfigurasi Settings
+Sebelum menjalankan VM, masuk ke menu **Settings > Display** dan naikkan *Video Memory* ke 128MB. Pastikan juga file ISO Kali Linux sudah dimasukkan ke bagian **Storage > Optical Drive**.
+
+### 4. Proses Instalasi Kali Linux
+Jalankan VM, lalu pilih menu **Graphical Install**. Ikuti petunjuk yang muncul:
+- Pilih Bahasa, Lokasi, dan Layout Keyboard.
+- Masukkan Nama Host (default: kali).
+- Buat User baru dan Password.
+- Untuk partisi disk, pilih **Guided - use entire disk**.
+- Tunggu hingga proses instalasi base system selesai.
+
+### 5. Finalisasi
+Setelah instalasi selesai, sistem akan meminta reboot. Pastikan Anda melepas file ISO dari drive virtual agar tidak masuk ke menu instalasi lagi. Login menggunakan user dan password yang telah Anda buat.
+
+---
+
+## Apa Selanjutnya?
+Setelah berhasil login, langkah pertama yang wajib Anda lakukan adalah melakukan update sistem. Buka terminal dan jalankan:
+
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+
+Jangan lupa untuk mengambil **Snapshot** melalui menu VirtualBox sebagai cadangan jika sewaktu-waktu sistem Anda rusak saat bereksperimen.
+
+Jika ada pertanyaan, silakan tulis di kolom komentar di bawah! 
+
+**Follow saya untuk tutorial lainnya:**
+- **Email**: kartono.saleh@gmail.com
+- **Github**: [kartonobinsaleh](https://github.com/kartonobinsaleh)
+- **Instagram**: [@kartonobinsaleh](https://www.instagram.com/kartonobinsaleh/)

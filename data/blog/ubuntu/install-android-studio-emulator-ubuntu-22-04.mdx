@@ -1,0 +1,59 @@
+---
+title: 'How to Install Android Studio and Emulator on Ubuntu 22.04'
+date: '2024-04-13'
+tags: ['android-studio', 'android', 'ubuntu', 'emulator']
+draft: false
+summary: 'Panduan lengkap cara menginstal Android Studio dan mengatur emulator untuk pengembangan aplikasi Android di Ubuntu 22.04.'
+images: ['/static/images/blog/ubuntu/emulator.webp']
+authors: ['kartonobinsaleh']
+---
+
+Apakah Anda pemula dalam pengembangan aplikasi Android? Langkah pertama yang paling penting adalah menyiapkan lingkungan pengembangan (environment setup). Di Ubuntu 22.04, proses ini cukup mudah jika dilakukan dengan langkah yang benar.
+
+Tonton video tutorial langkah demi langkahnya di sini:
+
+<YouTube id="4MSe2Y7DCyY" />
+
+---
+
+## Tahapan Instalasi
+
+### 1. Instalasi Java Development Kit (JDK)
+Android Studio memerlukan JDK untuk berjalan. Gunakan OpenJDK 17 yang stabil:
+
+```bash
+sudo apt update
+sudo apt install openjdk-17-jdk
+```
+
+### 2. Menginstal Android Studio
+Cara termudah dan paling direkomendasikan di Ubuntu adalah menggunakan paket **Snap**, karena secara otomatis menangani dependensi yang diperlukan:
+
+```bash
+sudo snap install android-studio --classic
+```
+
+### 3. Setup Wizard & Android SDK
+Setelah instalasi selesai, buka Android Studio dari menu aplikasi. Ikuti **Setup Wizard** untuk:
+- Mengunduh komponen SDK terbaru.
+- Mengatur tema UI.
+- Memastikan "Android SDK Command-line Tools" terinstal melalui SDK Manager.
+
+### 4. Membuat Android Virtual Device (Emulator)
+Agar bisa menjalankan aplikasi tanpa perangkat fisik, Anda perlu membuat emulator:
+1. Klik **Device Manager** di Android Studio.
+2. Pilih **Create Device**.
+3. Pilih model (misalnya Pixel 6) dan unduh System Image (misalnya Android 13/Tiramisu).
+4. Klik **Finish** dan jalankan emulator dengan menekan tombol **Play**.
+
+---
+
+## Kesimpulan
+Dengan mengikuti langkah-langkah di atas, Anda sekarang sudah memiliki lingkungan pengembangan Android yang fungsional di Ubuntu 22.04. Anda sudah siap untuk mulai membangun aplikasi Android pertama Anda!
+
+Jika ada kendala saat menjalankan emulator, pastikan fitur **Virtualization (VT-x/AMD-V)** sudah diaktifkan di BIOS laptop Anda.
+
+**Terhubung dengan saya:**
+- **Email**: kartono.saleh@gmail.com
+- **Github**: [kartonobinsaleh](https://github.com/kartonobinsaleh)
+- **Instagram**: [@kartonobinsaleh](https://www.instagram.com/kartonobinsaleh/)
