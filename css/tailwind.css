@@ -19,7 +19,6 @@
   --line-height-base: 1.75;
 
   /* Colors */
-  /* Copied from https://tailwindcss.com/docs/theme#default-theme-variable-reference */
   --color-primary-50: oklch(0.971 0.014 343.198);
   --color-primary-100: oklch(0.948 0.028 342.258);
   --color-primary-200: oklch(0.899 0.061 343.231);
@@ -32,16 +31,20 @@
   --color-primary-900: oklch(0.408 0.153 2.432);
   --color-primary-950: oklch(0.284 0.109 3.907);
 
+  --color-background-soft: #fafafa;
+  --color-text-primary: #333333;
+  --color-text-secondary: #666666;
+
   --color-gray-50: oklch(0.985 0.002 247.839);
   --color-gray-100: oklch(0.967 0.003 264.542);
   --color-gray-200: oklch(0.928 0.006 264.531);
   --color-gray-300: oklch(0.872 0.01 258.338);
   --color-gray-400: oklch(0.707 0.022 261.325);
-  --color-gray-500: oklch(0.551 0.027 264.364);
-  --color-gray-600: oklch(0.446 0.03 256.802);
-  --color-gray-700: oklch(0.373 0.034 259.733);
-  --color-gray-800: oklch(0.278 0.033 256.848);
-  --color-gray-900: oklch(0.21 0.034 264.665);
+  --color-gray-500: #666666;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #333333;
+  --color-gray-900: #111827;
   --color-gray-950: oklch(0.13 0.028 261.692);
 
   /* Line heights */
@@ -137,10 +140,12 @@
     & a {
       color: var(--color-primary-500);
       font-weight: 500;
-      text-decoration: underline;
-      text-underline-offset: 4px;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
       &:hover {
         color: var(--color-primary-600);
+        border-bottom-color: var(--color-primary-500);
       }
       & code {
         color: var(--color-primary-400);
@@ -149,8 +154,9 @@
 
     & :where(h1, h2, h3, h4) {
       font-family: var(--font-heading);
-      margin-top: 2em;
+      margin-top: 2.5em;
       margin-bottom: 0.8em;
+      color: var(--color-gray-900);
     }
 
     & h1 {
@@ -166,16 +172,24 @@
     }
 
     & p {
-      margin-top: 1.25em;
-      margin-bottom: 1.25em;
+      margin-top: 1.5em;
+      margin-bottom: 1.5em;
+      color: var(--color-text-primary);
     }
 
     & :where(code):not(pre code) {
       color: var(--color-primary-600);
-      background-color: var(--color-gray-100);
+      background-color: var(--color-primary-50);
       padding: 0.2em 0.4em;
-      border-radius: 4px;
+      border-radius: 6px;
       font-weight: 500;
+    }
+
+    & pre {
+      background-color: #1e293b;
+      border-radius: 12px;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      margin: 2em 0;
     }
   }
 
@@ -184,9 +198,9 @@
     --tw-prose-headings: var(--color-gray-100);
 
     & a {
-      color: var(--color-primary-500);
+      color: var(--color-primary-400);
       &:hover {
-        color: var(--color-primary-400);
+        color: var(--color-primary-300);
       }
     }
 
@@ -196,7 +210,7 @@
 
     & :where(code):not(pre code) {
       color: var(--color-primary-400);
-      background-color: var(--color-gray-800);
+      background-color: var(--color-primary-950);
     }
   }
 

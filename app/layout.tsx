@@ -94,7 +94,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
       <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
       <link rel="alternate" type="application/rss+xml" href={`${basePath}/feed.xml`} />
-      <body className="overflow-x-hidden bg-white font-sans text-gray-800 antialiased dark:bg-gray-950 dark:text-gray-200">
+      <body className="overflow-x-hidden bg-[#fafafa] font-sans text-[#333333] antialiased dark:bg-[#0b0b0b] dark:text-gray-200">
         <ThemeProviders>
           <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
           <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>
