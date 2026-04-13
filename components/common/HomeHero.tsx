@@ -1,5 +1,6 @@
 'use client'
 
+import { Suspense } from 'react'
 import Link from '@/components/ui/Link'
 import Scene from '../three/Scene'
 
@@ -24,9 +25,25 @@ export default function HomeHero() {
           </div>
         </div>
 
-        <div className="w-full flex-1 lg:w-1/2">
-          <div className="aspect-[4/3] h-full sm:aspect-[16/9] lg:aspect-auto lg:h-[70vh]">
-            <Scene />
+        <div className="relative w-full flex-1 lg:w-1/2">
+          {/* Tech Blueprint Background - Diterangkan agar terlihat jelas */}
+          
+          {/* 1. Tech Grid (Pertegas) */}
+          <div className="absolute inset-0 z-0 opacity-[0.5] [mask-image:radial-gradient(ellipse_at_center,black,transparent)] dark:opacity-[0.25]">
+            <div className="h-full w-full" style={{ 
+              backgroundImage: `
+                linear-gradient(to right, #d1d5db 1px, transparent 1px),
+                linear-gradient(to bottom, #d1d5db 1px, transparent 1px)
+              `,
+              backgroundSize: '40px 40px'
+            }}></div>
+          </div>
+          
+
+          <div className="relative z-10 aspect-[4/3] h-full sm:aspect-[16/9] lg:aspect-auto lg:h-[70vh]">
+            <Suspense fallback={<div className="h-full w-full animate-pulse rounded-2xl bg-gray-100 dark:bg-gray-800" />}>
+              <Scene />
+            </Suspense>
           </div>
         </div>
       </div>
