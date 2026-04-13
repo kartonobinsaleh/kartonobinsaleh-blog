@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export default function Newsletter() {
   return (
-    <section className="dark:bg-dark-surface dark:border-dark-border mx-auto mt-4 mb-20 max-w-7xl overflow-hidden rounded-3xl border border-gray-100 bg-gray-50 px-6 py-12 text-center text-gray-900 sm:px-12 dark:text-gray-100">
+    <section className="dark:bg-dark-surface dark:border-dark-border mx-4 mt-4 mb-20 max-w-7xl overflow-hidden rounded-3xl border border-gray-100 bg-gray-50 px-6 py-12 text-center text-gray-900 sm:mx-6 sm:px-12 lg:mx-auto dark:text-gray-100">
       <h2 className="font-heading mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
         Newsletter 📫
       </h2>
