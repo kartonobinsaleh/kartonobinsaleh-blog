@@ -9,8 +9,8 @@ export default function MobileNav({
   openMenu,
   setOpenMenuAction,
 }: {
-  openMenu: 'theme' | 'mobile' | null
-  setOpenMenuAction: (menu: 'theme' | 'mobile' | null) => void
+  openMenu: 'mobile' | null
+  setOpenMenuAction: (menu: 'mobile' | null) => void
 }) {
   const isOpen = openMenu === 'mobile'
 

@@ -24,7 +24,7 @@ function useIsScrollTop() {
 
 export default function Header() {
   const isTop = useIsScrollTop()
-  const [openMenu, setOpenMenu] = useState<'theme' | 'mobile' | null>(null)
+  const [openMenu, setOpenMenu] = useState<'mobile' | null>(null)
 
   const headerClass =
     `sticky top-0 z-50 w-full py-4 sm:py-6 transition-all duration-300 ` +
@@ -70,7 +70,7 @@ export default function Header() {
 
         <div className="flex items-center gap-2 md:gap-4">
           <SearchButton />
-          <ThemeSwitch openMenu={openMenu} setOpenMenuAction={setOpenMenu} />
+          <ThemeSwitch />
 
           <Link
             href="https://kartonobinsaleh.substack.com/"
