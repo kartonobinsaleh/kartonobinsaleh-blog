@@ -17,15 +17,15 @@ export default function Footer() {
               {siteMetadata.headerTitle}
             </Link>
             <p className="max-w-md text-center text-sm leading-relaxed text-gray-500 md:text-left dark:text-gray-400">
-              Berbagi pemikiran seputar pengembangan software, Linux, dan produktivitas
-              untuk membantu Anda membangun karya yang lebih baik melalui panduan praktis
-              dan project dunia nyata.
+              Berbagi pemikiran seputar pengembangan software, Linux, dan produktivitas untuk
+              membantu Anda membangun karya yang lebih baik melalui panduan praktis dan project
+              dunia nyata.
             </p>
           </div>
 
           {/* Column 2: Navigation */}
           <div className="flex flex-col items-center gap-4 md:items-start">
-            <h3 className="tracking-wider text-gray-900 uppercase text-sm font-semibold dark:text-gray-100">
+            <h3 className="text-sm font-semibold tracking-wider text-gray-900 uppercase dark:text-gray-100">
               Explore
             </h3>
             <nav className="flex flex-col items-center gap-2 md:items-start">
@@ -43,7 +43,7 @@ export default function Footer() {
 
           {/* Column 3: Socials & Connect */}
           <div className="flex flex-col items-center gap-4 md:items-start">
-            <h3 className="tracking-wider text-gray-900 uppercase text-sm font-semibold dark:text-gray-100">
+            <h3 className="text-sm font-semibold tracking-wider text-gray-900 uppercase dark:text-gray-100">
               Connect
             </h3>
             <div className="flex flex-wrap justify-center gap-4 md:justify-start">
@@ -53,7 +53,7 @@ export default function Footer() {
               <SocialIcon kind="linkedin" href={siteMetadata.linkedin} size={5} />
               <SocialIcon kind="mail" href={`mailto:${siteMetadata.email}`} size={5} />
             </div>
-            <div className="mt-2 text-sm text-center text-gray-500 md:text-left dark:text-gray-400">
+            <div className="mt-2 text-center text-sm text-gray-500 md:text-left dark:text-gray-400">
               {siteMetadata.email}
             </div>
           </div>

@@ -29,7 +29,7 @@ export default function HomeHero() {
           {/* Tech Blueprint Background - Diterangkan agar terlihat jelas */}
           
           {/* 1. Tech Grid (Pertegas) */}
-          <div className="[mask-image:radial-gradient(ellipse_at_center,black,transparent)] absolute inset-0 z-0 opacity-[0.5] dark:opacity-[0.25]">
+          <div className="absolute inset-0 z-0 opacity-[0.5] [mask-image:radial-gradient(ellipse_at_center,black,transparent)] dark:opacity-[0.25]">
             <div
               className="h-full w-full"
               style={{
