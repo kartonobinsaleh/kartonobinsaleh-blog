@@ -1,3 +1,4 @@
+import React from 'react'
 import siteMetadata from '@/data/siteMetadata'
 import SocialIcon from '@/components/social'
 import Link from '@/components/ui/Link'
@@ -52,9 +53,6 @@ export default function Footer() {
               <SocialIcon kind="youtube" href={siteMetadata.youtube} size={5} />
               <SocialIcon kind="linkedin" href={siteMetadata.linkedin} size={5} />
               <SocialIcon kind="mail" href={`mailto:${siteMetadata.email}`} size={5} />
-            </div>
-            <div className="mt-2 text-center text-sm text-gray-500 md:text-left dark:text-gray-400">
-              {siteMetadata.email}
             </div>
           </div>
         </div>
