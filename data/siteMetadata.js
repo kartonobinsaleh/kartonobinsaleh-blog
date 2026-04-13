@@ -9,7 +9,7 @@ const siteMetadata = {
   theme: 'system', // system, dark or light
   siteUrl: 'https://kartonobinsaleh.com',
   siteRepo: 'https://github.com/kartonobinsaleh/kartonobinsaleh-blog',
-  siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.png`,
+  siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.webp`,
   socialBanner: `${process.env.BASE_PATH || ''}/static/images/banner.webp`,
   mastodon: 'https://mastodon.social/@mastodonuser',
   email: 'kartono.saleh@gmail.com',
