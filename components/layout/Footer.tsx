@@ -5,22 +5,26 @@ import headerNavLinks from '@/data/headerNavLinks'
 
 export default function Footer() {
   return (
-    <footer className="mt-16 w-full border-t border-gray-100 bg-gray-50/50 py-12 dark:border-dark-border dark:bg-dark-bg/50">
+    <footer className="dark:border-dark-border dark:bg-dark-bg/50 mt-16 w-full border-t border-gray-100 bg-gray-50/50 py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
           {/* Column 1: Branding & Description */}
           <div className="flex flex-col gap-4">
-            <Link href="/" className="text-xl font-bold tracking-tight text-gray-900 dark:text-gray-100">
+            <Link
+              href="/"
+              className="text-xl font-bold tracking-tight text-gray-900 dark:text-gray-100"
+            >
               {siteMetadata.headerTitle}
             </Link>
             <p className="max-w-xs text-sm leading-relaxed text-gray-500 dark:text-gray-400">
-              Berbagi pemikiran seputar pengembangan software, Linux, dan produktivitas untuk membantu Anda membangun karya yang lebih baik.
+              Berbagi pemikiran seputar pengembangan software, Linux, dan produktivitas
+              untuk membantu Anda membangun karya yang lebih baik.
             </p>
           </div>
 
           {/* Column 2: Navigation */}
           <div className="flex flex-col gap-4">
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-900 dark:text-gray-100">
+            <h3 className="tracking-wider text-gray-900 uppercase text-sm font-semibold dark:text-gray-100">
               Explore
             </h3>
             <nav className="flex flex-col gap-2">
@@ -28,7 +32,7 @@ export default function Footer() {
                 <Link
                   key={link.title}
                   href={link.href}
-                  className="text-sm text-gray-500 hover:text-primary-500 dark:text-gray-400 dark:hover:text-primary-400 transition-colors"
+                  className="hover:text-primary-500 dark:hover:text-primary-400 text-sm text-gray-500 transition-colors dark:text-gray-400"
                 >
                   {link.title}
                 </Link>
@@ -38,7 +42,7 @@ export default function Footer() {
 
           {/* Column 3: Socials & Connect */}
           <div className="flex flex-col gap-4">
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-900 dark:text-gray-100">
+            <h3 className="tracking-wider text-gray-900 uppercase text-sm font-semibold dark:text-gray-100">
               Connect
             </h3>
             <div className="flex flex-wrap gap-4">

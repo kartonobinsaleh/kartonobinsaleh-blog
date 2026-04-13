@@ -6,7 +6,7 @@ import Scene from '../three/Scene'
 
 export default function HomeHero() {
   return (
-    <section className="relative w-full bg-gradient-to-b from-white to-gray-50/50 py-12 sm:py-12 md:py-20 dark:from-dark-bg dark:to-dark-bg/80">
+    <section className="dark:from-dark-bg dark:to-dark-bg/80 relative w-full bg-gradient-to-b from-white to-gray-50/50 py-12 sm:py-12 md:py-20">
       <div className="mx-auto flex min-h-[80vh] max-w-7xl flex-col gap-10 px-4 sm:px-6 lg:min-h-0 lg:flex-row lg:items-center xl:px-0">
         <div className="flex flex-1 flex-col justify-center space-y-6 text-center lg:text-left">
           <h1 className="font-heading text-4xl font-extrabold text-gray-900 sm:text-5xl lg:text-7xl dark:text-white">
@@ -29,31 +29,30 @@ export default function HomeHero() {
           {/* Tech Blueprint Background - Diterangkan agar terlihat jelas */}
           
           {/* 1. Tech Grid (Pertegas) */}
-          <div className="absolute inset-0 z-0 opacity-[0.5] [mask-image:radial-gradient(ellipse_at_center,black,transparent)] dark:opacity-[0.25]">
-            <div className="h-full w-full" style={{ 
-              backgroundImage: `
+          <div className="[mask-image:radial-gradient(ellipse_at_center,black,transparent)] absolute inset-0 z-0 opacity-[0.5] dark:opacity-[0.25]">
+            <div
+              className="h-full w-full"
+              style={{
+                backgroundImage: `
                 linear-gradient(to right, #d1d5db 1px, transparent 1px),
                 linear-gradient(to bottom, #d1d5db 1px, transparent 1px)
               `,
-              backgroundSize: '40px 40px'
-            }}></div>
+                backgroundSize: '40px 40px',
+              }}
+            ></div>
           </div>
           
 
           <div className="relative z-10 aspect-[4/3] h-full sm:aspect-[16/9] lg:aspect-auto lg:h-[70vh]">
-            <Suspense fallback={<div className="h-full w-full animate-pulse rounded-2xl bg-gray-100 dark:bg-gray-800" />}>
+            <Suspense
+              fallback={
+                <div className="h-full w-full animate-pulse rounded-2xl bg-gray-100 dark:bg-gray-800" />
+              }
+            >
               <Scene />
             </Suspense>
           </div>
         </div>
-      </div>
-
-      <div className="absolute bottom-6 flex w-full justify-center">
-        <a href="#latest-posts" className="group">
-          <div className="flex h-12 w-6 items-center justify-center rounded-3xl border-2 border-gray-500 p-1 group-hover:border-gray-700 dark:border-gray-300 dark:group-hover:border-gray-500">
-            <div className="animate-bounce-up-down h-3 w-1 rounded-full bg-gray-500 group-hover:bg-gray-700 dark:bg-gray-300 dark:group-hover:bg-gray-500"></div>
-          </div>
-        </a>
       </div>
     </section>
   )

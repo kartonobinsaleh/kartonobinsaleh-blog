@@ -35,7 +35,7 @@ export default function ArticleCard({
 
   return (
     <Link href={`/blog/${slug}`} className="group block h-full">
-      <article className="flex h-full flex-col overflow-hidden rounded-2xl bg-white border border-gray-200 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] dark:bg-dark-surface dark:border dark:border-dark-border">
+      <article className="dark:bg-dark-surface dark:border-dark-border flex h-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] dark:border">
         <div className="px-4 pt-4">
           <div className="relative h-48 w-full overflow-hidden rounded-xl">
             <Image

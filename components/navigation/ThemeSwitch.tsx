@@ -11,7 +11,7 @@ export default function ThemeSwitch() {
   // When mounted on client, now we can show the UI
   useEffect(() => setMounted(true), [])
 
-  if (!mounted) return <div className="p-2 h-9 w-9" /> // Placeholder to avoid layout shift
+  if (!mounted) return <div className="h-9 w-9 p-2" /> // Placeholder to avoid layout shift
 
   const toggleTheme = () => {
     setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
@@ -26,9 +26,9 @@ export default function ThemeSwitch() {
       onClick={toggleTheme}
     >
       {resolvedTheme === 'dark' ? (
-        <Moon className="h-5 w-5 text-gray-500 transition-colors group-hover:text-primary-400" />
+        <Moon className="group-hover:text-primary-400 h-5 w-5 text-gray-500 transition-colors" />
       ) : (
-        <Sun className="h-5 w-5 text-gray-500 transition-colors group-hover:text-primary-500" />
+        <Sun className="group-hover:text-primary-500 h-5 w-5 text-gray-500 transition-colors" />
       )}
     </button>
   )

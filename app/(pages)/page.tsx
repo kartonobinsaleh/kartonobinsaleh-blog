@@ -48,11 +48,11 @@ export default async function HomePage() {
           <div className="flex justify-end pt-8 pb-4">
             <Link
               href="/blog"
-              className="group relative inline-block font-medium text-primary-500 transition-colors duration-300 hover:text-primary-600"
+              className="text-primary-500 hover:text-primary-600 group relative inline-block font-medium transition-colors duration-300"
               aria-label="All posts"
             >
               <span>All posts</span>
-              <span className="absolute -bottom-1 left-0 h-px w-0 bg-primary-500 transition-all duration-300 group-hover:w-full"></span>
+              <span className="bg-primary-500 absolute -bottom-1 left-0 h-px w-0 transition-all duration-300 group-hover:w-full"></span>
             </Link>
           </div>
         )}
