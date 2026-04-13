@@ -1,6 +1,5 @@
 'use client'
 
-import { useState } from 'react'
 import Link from 'next/link'
 import { Menu as MenuIcon, X } from 'lucide-react'
 import headerNavLinks from '@/data/headerNavLinks'
@@ -18,9 +17,8 @@ export default function MobileNav({
     <div className="relative sm:hidden">
       <button
         aria-label="Toggle menu"
-        className={`rounded-full border border-transparent p-2 transition ${
-          isOpen ? 'bg-gray-100 dark:bg-gray-700' : ''
-        } hover:bg-gray-100 dark:hover:bg-gray-700`}
+        className={`rounded-full border border-transparent p-2 transition ${isOpen ? 'bg-gray-100 dark:bg-gray-700' : ''
+          } hover:bg-gray-100 dark:hover:bg-gray-700`}
         onClick={() => setOpenMenuAction(isOpen ? null : 'mobile')}
       >
         {isOpen ? <X className="h-5 w-5" /> : <MenuIcon className="h-5 w-5" />}

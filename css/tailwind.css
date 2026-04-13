@@ -32,20 +32,25 @@
   --color-primary-950: oklch(0.284 0.109 3.907);
 
   --color-background-soft: #fafafa;
-  --color-text-primary: #333333;
-  --color-text-secondary: #666666;
+  --color-text-primary: #18181b; /* Zinc-900 */
+  --color-text-secondary: #52525b; /* Zinc-600 */
 
-  --color-gray-50: oklch(0.985 0.002 247.839);
-  --color-gray-100: oklch(0.967 0.003 264.542);
-  --color-gray-200: oklch(0.928 0.006 264.531);
-  --color-gray-300: oklch(0.872 0.01 258.338);
-  --color-gray-400: oklch(0.707 0.022 261.325);
-  --color-gray-500: #666666;
-  --color-gray-600: #4b5563;
-  --color-gray-700: #374151;
-  --color-gray-800: #333333;
-  --color-gray-900: #111827;
-  --color-gray-950: oklch(0.13 0.028 261.692);
+  --color-gray-50: #fafafa;
+  --color-gray-100: #f4f4f5;
+  --color-gray-200: #e4e4e7;
+  --color-gray-300: #d4d4d8;
+  --color-gray-400: #a1a1aa;
+  --color-gray-500: #71717a;
+  --color-gray-600: #52525b;
+  --color-gray-700: #3f3f46;
+  --color-gray-800: #27272a;
+  --color-gray-900: #18181b;
+  --color-gray-950: #09090b;
+
+  /* Custom Elevation Colors for Dark Mode */
+  --color-dark-bg: #0a0a0c;
+  --color-dark-surface: #121214;
+  --color-dark-border: rgba(255, 255, 255, 0.05);
 
   /* Line heights */
   --line-height-11: 2.75rem;
@@ -218,15 +223,15 @@
 
     /* Dark Mode Overrides */
     .dark & {
-      --tw-prose-body: var(--color-gray-200);
-      --tw-prose-headings: var(--color-gray-100);
+      --tw-prose-body: var(--color-gray-300); /* Lighter gray for better reading */
+      --tw-prose-headings: var(--color-gray-50);
       --tw-prose-bold: var(--color-gray-50);
       --tw-prose-code: var(--color-primary-400);
       --tw-prose-pre-bg: #0f172a;
       --tw-prose-quote-borders: var(--color-gray-700);
       
       & :where(code):not(pre code) {
-        background-color: var(--color-primary-950);
+        background-color: rgba(255, 255, 255, 0.05);
       }
 
       & h2 {

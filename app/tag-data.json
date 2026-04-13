@@ -6,17 +6,17 @@
   "productivity": 1,
   "gnome": 1,
   "extensions": 1,
+  "kali-linux": 1,
+  "virtualbox": 1,
+  "cyber-security": 1,
   "neovim": 1,
   "vim": 1,
   "editor": 1,
   "qt": 1,
   "cpp": 1,
   "development": 1,
-  "mysql": 1,
-  "database": 1,
+  "react-native": 1,
   "tutorial": 2,
-  "kali-linux": 1,
-  "virtualbox": 1,
-  "cyber-security": 1,
-  "react-native": 1
+  "mysql": 1,
+  "database": 1
 }

@@ -27,10 +27,10 @@ export default function Header() {
   const [openMenu, setOpenMenu] = useState<'mobile' | null>(null)
 
   const headerClass =
-    `sticky top-0 z-50 w-full py-4 sm:py-6 transition-all duration-300 ` +
+    `sticky top-0 z-50 w-full py-4 sm:py-6 transition-all duration-300 border-b border-transparent ` +
     (isTop
-      ? 'bg-white/60 backdrop-blur-md backdrop-saturate-150 dark:bg-gray-950/60'
-      : 'bg-white shadow dark:bg-gray-950')
+      ? 'bg-white/60 backdrop-blur-md backdrop-saturate-150 dark:bg-dark-bg/60'
+      : 'bg-white/80 backdrop-blur-md shadow-sm dark:bg-dark-bg dark:border-dark-border')
 
   return (
     <header className={headerClass}>

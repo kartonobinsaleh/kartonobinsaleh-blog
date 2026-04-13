@@ -5,13 +5,13 @@ import Scene from '../three/Scene'
 
 export default function HomeHero() {
   return (
-    <section className="relative w-full bg-gray-50 py-12 sm:py-12 md:py-20 dark:bg-gray-900">
+    <section className="relative w-full bg-gradient-to-b from-white to-gray-50/50 py-12 sm:py-12 md:py-20 dark:from-dark-bg dark:to-dark-bg/80">
       <div className="mx-auto flex min-h-[80vh] max-w-7xl flex-col gap-10 px-4 sm:px-6 lg:min-h-0 lg:flex-row lg:items-center xl:px-0">
         <div className="flex flex-1 flex-col justify-center space-y-6 text-center lg:text-left">
-          <h1 className="font-heading text-3xl font-extrabold text-gray-900 sm:text-4xl lg:text-6xl dark:text-gray-100">
+          <h1 className="font-heading text-4xl font-extrabold text-gray-900 sm:text-5xl lg:text-7xl dark:text-white">
             Start from Zero, Learn by Building
           </h1>
-          <p className="text-lg leading-relaxed text-gray-700 sm:text-xl dark:text-gray-300">
+          <p className="max-w-xl text-lg leading-relaxed text-gray-600 sm:text-xl dark:text-gray-400">
             Belajar dari nol lewat tutorials, tips, dan real projects di dunia software development.
           </p>
           <div className="mt-6">

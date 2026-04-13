@@ -43,14 +43,16 @@ export default async function HomePage() {
             )
           })}
         </ul>
+
         {posts.length > MAX_DISPLAY && (
-          <div className="flex justify-end pt-6 text-base leading-6 font-medium">
+          <div className="flex justify-end pt-8 pb-4">
             <Link
               href="/blog"
-              className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+              className="group relative inline-block font-medium text-primary-500 transition-colors duration-300 hover:text-primary-600"
               aria-label="All posts"
             >
-              All Posts &rarr;
+              <span>All posts</span>
+              <span className="absolute -bottom-1 left-0 h-px w-0 bg-primary-500 transition-all duration-300 group-hover:w-full"></span>
             </Link>
           </div>
         )}
