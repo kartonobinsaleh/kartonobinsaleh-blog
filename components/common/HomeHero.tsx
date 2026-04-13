@@ -27,7 +27,6 @@ export default function HomeHero() {
 
         <div className="relative w-full flex-1 lg:w-1/2">
           {/* Tech Blueprint Background - Diterangkan agar terlihat jelas */}
-          
           {/* 1. Tech Grid (Pertegas) */}
           <div className="absolute inset-0 z-0 [mask-image:radial-gradient(ellipse_at_center,black,transparent)] opacity-[0.5] dark:opacity-[0.25]">
             <div
@@ -41,7 +40,6 @@ export default function HomeHero() {
               }}
             ></div>
           </div>
-
           <div className="relative z-10 aspect-[4/3] h-full sm:aspect-[16/9] lg:aspect-auto lg:h-[70vh]">
             <Suspense
               fallback={
