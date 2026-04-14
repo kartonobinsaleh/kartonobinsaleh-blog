@@ -11,7 +11,6 @@ import siteMetadata from '@/data/siteMetadata'
 import ScrollTopAndComment from '@/components/common/ScrollTopAndComment'
 const editUrl = (path) => `${siteMetadata.siteRepo}/blob/main/data/${path}`
 
-
 const postDateTemplate: Intl.DateTimeFormatOptions = {
   weekday: 'long',
   year: 'numeric',
