@@ -10,6 +10,7 @@ import Tag from '@/components/common/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import ScrollTopAndComment from '@/components/common/ScrollTopAndComment'
 import SeriesTableOfContents from '@/components/blog/SeriesTableOfContents'
+import { ChevronLeft } from 'lucide-react'
 const editUrl = (path) => `${siteMetadata.siteRepo}/blob/main/data/${path}`
 
 const postDateTemplate: Intl.DateTimeFormatOptions = {
@@ -36,63 +37,83 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
       <ScrollTopAndComment />
       <article className="mx-auto max-w-7xl">
         <div className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
-          <header className="pt-6 xl:pb-6">
-            <div className="space-y-1 text-center">
-              <dl className="space-y-10">
-                <div>
-                  <dt className="sr-only">Published on</dt>
-                  <dd className="text-base leading-6 font-medium text-gray-500 dark:text-gray-400">
-                    <time dateTime={date}>
-                      {new Date(date).toLocaleDateString(siteMetadata.locale, postDateTemplate)}
-                    </time>
-                  </dd>
-                </div>
+          <header className="pt-2 lg:pt-6 xl:pb-6 text-center">
+            <div className="pb-4 text-left lg:hidden">
+              <Link
+                href={`/${basePath}`}
+                className="flex items-center text-sm font-medium text-primary-500 hover:text-primary-600 dark:text-primary-400"
+                aria-label="Back"
+              >
+                <ChevronLeft className="w-4 h-4 mr-1" strokeWidth={3} />
+                Back
+              </Link>
+            </div>
+            <PageTitle>{title}</PageTitle>
+            <div className="flex justify-center flex-wrap gap-x-6 gap-y-2 pt-6">
+              <dl className="flex flex-wrap justify-center gap-4">
+                <dt className="sr-only">Authors</dt>
+                <dd>
+                  <ul className="flex justify-center gap-4">
+                    {authorDetails.map((author) => (
+                      <li className="flex items-center space-x-2" key={author.name}>
+                        {author.avatar && (
+                          <Image
+                            src={author.avatar}
+                            width={24}
+                            height={24}
+                            alt="avatar"
+                            className="h-6 w-6 rounded-full"
+                          />
+                        )}
+                        <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                          {author.name}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </dd>
               </dl>
-              <div>
-                <PageTitle>{title}</PageTitle>
-              </div>
+              <dl className="flex items-center">
+                <dt className="sr-only">Published on</dt>
+                <dd className="text-sm leading-6 font-medium text-gray-500 dark:text-gray-400">
+                  <time dateTime={date}>
+                    {new Date(date).toLocaleDateString(siteMetadata.locale, postDateTemplate)}
+                  </time>
+                </dd>
+              </dl>
             </div>
           </header>
-          <div className="grid-rows-[auto_1fr] divide-y divide-gray-200 pb-8 xl:grid xl:grid-cols-4 xl:gap-x-6 xl:divide-y-0 dark:divide-gray-700">
-            <dl className="pt-6 pb-10 xl:border-b xl:border-gray-200 xl:pt-11 xl:dark:border-gray-700">
-              <dt className="sr-only">Authors</dt>
-              <dd>
-                <ul className="flex flex-wrap justify-center gap-4 sm:space-x-12 xl:block xl:space-y-8 xl:space-x-0">
-                  {authorDetails.map((author) => (
-                    <li className="flex items-center space-x-2" key={author.name}>
-                      {author.avatar && (
-                        <Image
-                          src={author.avatar}
-                          width={38}
-                          height={38}
-                          alt="avatar"
-                          className="h-10 w-10 rounded-full"
-                        />
-                      )}
-                      <dl className="text-sm leading-5 font-medium whitespace-nowrap">
-                        <dt className="sr-only">Name</dt>
-                        <dd className="text-gray-900 dark:text-gray-100">{author.name}</dd>
-                        <dt className="sr-only">Twitter</dt>
-                        <dd>
-                          {author.twitter && (
-                            <Link
-                              href={author.twitter}
-                              className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                            >
-                              {author.twitter
-                                .replace('https://twitter.com/', '@')
-                                .replace('https://x.com/', '@')}
-                            </Link>
-                          )}
-                        </dd>
-                      </dl>
-                    </li>
-                  ))}
-                </ul>
-              </dd>
-            </dl>
-            <div className="divide-y divide-gray-200 xl:col-span-3 xl:row-span-2 xl:pb-0 dark:divide-gray-700">
+          <div className="flex flex-col divide-y divide-gray-200 pb-8 lg:grid lg:grid-cols-4 lg:grid-rows-[auto_1fr] lg:gap-x-8 lg:divide-y-0 dark:divide-gray-700">
+            <aside className="order-last lg:order-first sticky top-24 lg:self-start divide-y divide-gray-200 dark:divide-gray-700">
               {series && <SeriesTableOfContents series={series} currentSlug={slug} />}
+            <div className="text-sm leading-5 font-medium">
+              {tags && (
+                <div className="py-4 lg:py-8">
+                  <h2 className="text-xs tracking-wide text-gray-500 uppercase dark:text-gray-400 mb-4">
+                    Tags
+                  </h2>
+                  <div className="flex flex-wrap">
+                    {tags.map((tag) => (
+                      <Tag key={tag} text={tag} />
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+            <div className="hidden lg:block pt-4 lg:pt-8 mt-4">
+              <Link
+                href={`/${basePath}`}
+                className="group flex items-center text-primary-500 transition-colors hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300"
+                aria-label="Back to the blog"
+              >
+                <span className="mr-1 transition-transform duration-300 group-hover:-translate-x-1">
+                  <ChevronLeft className="w-5 h-5" strokeWidth={2.5} />
+                </span>
+                <span className="font-medium">Back</span>
+              </Link>
+            </div>
+            </aside>
+            <div className="divide-y divide-gray-200 lg:col-span-3 lg:pb-0 dark:divide-gray-700">
               <div className="prose dark:prose-invert max-w-none pt-10 pb-8">
                 {children}
               </div>
@@ -107,56 +128,37 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                   <Comments slug={slug} />
                 </div>
               )}
-            </div>
-            <footer>
-              <div className="divide-gray-200 text-sm leading-5 font-medium xl:col-start-1 xl:row-start-2 xl:divide-y dark:divide-gray-700">
-                {tags && (
-                  <div className="py-4 xl:py-8">
-                    <h2 className="text-xs tracking-wide text-gray-500 uppercase dark:text-gray-400">
-                      Tags
-                    </h2>
-                    <div className="flex flex-wrap">
-                      {tags.map((tag) => (
-                        <Tag key={tag} text={tag} />
-                      ))}
+              {(next || prev) && (
+                <div className="grid grid-cols-1 gap-4 py-8 sm:grid-cols-2">
+                  {prev && prev.path ? (
+                    <div className="group relative rounded-xl border border-gray-200 p-4 transition-colors hover:border-primary-500 dark:border-gray-800">
+                      <dt className="text-xs tracking-wide text-gray-500 uppercase dark:text-gray-400">
+                        Previous Article
+                      </dt>
+                      <dd className="mt-1 text-primary-500 transition-colors dark:text-primary-400">
+                        <Link href={`/${prev.path}`} className="before:absolute before:inset-0">
+                          {prev.title}
+                        </Link>
+                      </dd>
                     </div>
-                  </div>
-                )}
-                {(next || prev) && (
-                  <div className="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
-                    {prev && prev.path && (
-                      <div>
-                        <h2 className="text-xs tracking-wide text-gray-500 uppercase dark:text-gray-400">
-                          Previous Article
-                        </h2>
-                        <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
-                          <Link href={`/${prev.path}`}>{prev.title}</Link>
-                        </div>
-                      </div>
-                    )}
-                    {next && next.path && (
-                      <div>
-                        <h2 className="text-xs tracking-wide text-gray-500 uppercase dark:text-gray-400">
-                          Next Article
-                        </h2>
-                        <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
-                          <Link href={`/${next.path}`}>{next.title}</Link>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
-              <div className="pt-4 xl:pt-8">
-                <Link
-                  href={`/${basePath}`}
-                  className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                  aria-label="Back to the blog"
-                >
-                  &larr; Back to the blog
-                </Link>
-              </div>
-            </footer>
+                  ) : (
+                    <div />
+                  )}
+                  {next && next.path && (
+                    <div className="group relative rounded-xl border border-gray-200 p-4 text-right transition-colors hover:border-primary-500 dark:border-gray-800">
+                      <dt className="text-xs tracking-wide text-gray-500 uppercase dark:text-gray-400">
+                        Next Article
+                      </dt>
+                      <dd className="mt-1 text-primary-500 transition-colors dark:text-primary-400">
+                        <Link href={`/${next.path}`} className="before:absolute before:inset-0">
+                          {next.title}
+                        </Link>
+                      </dd>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </article>
