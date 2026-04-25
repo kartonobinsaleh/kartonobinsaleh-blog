@@ -1,0 +1,154 @@
+---
+title: 'Perintah Dasar Git: Praktik Langsung (Dasar Git #5)'
+date: '2026-04-25'
+tags: ['git', 'version control', 'pemula', 'programming']
+draft: false
+summary: 'Belajar perintah dasar Git seperti init, add, commit, dan status dengan praktik langsung step-by-step.'
+images: ['/static/images/blog/git/dasar-git-05-perintah-dasar-git.webp']
+authors: ['kartonobinsaleh']
+series: 'Dasar Git'
+order: 5
+---
+
+# Perintah Dasar Git
+
+Setelah memahami konsep dan istilah dasar Git, sekarang saatnya kita mulai praktik langsung.
+
+Di bagian ini, kamu akan menggunakan Git secara nyata melalui terminal.
+
+Tidak perlu takut, kita akan lakukan step-by-step.
+
+---
+
+## Persiapan
+
+Pastikan kamu sudah menginstall Git di komputer kamu.
+
+Untuk mengecek, jalankan perintah berikut:
+
+```bash
+git --version
+```
+
+Jika muncul versi Git, berarti Git sudah siap digunakan.
+
+---
+
+## Langkah 1: Membuat Repository
+
+Masuk ke folder project kamu, lalu jalankan:
+
+```bash
+git init
+```
+
+Perintah ini digunakan untuk membuat repository Git baru.
+
+Setelah menjalankan perintah ini, folder project kamu sudah “diaktifkan” sebagai repository Git.
+
+---
+
+## Langkah 2: Cek Status Project
+
+Sekarang cek kondisi project kamu:
+
+```bash
+git status
+```
+
+Perintah ini akan menampilkan:
+
+* file yang belum dilacak
+* file yang sudah diubah
+* file yang siap disimpan
+
+---
+
+## Langkah 3: Menambahkan Perubahan
+
+Tambahkan file ke staging area:
+
+```bash
+git add .
+```
+
+Perintah ini akan menambahkan semua file ke staging area.
+
+Jika ingin menambahkan satu file saja:
+
+```bash
+git add nama_file.txt
+```
+
+---
+
+## Langkah 4: Menyimpan Perubahan (Commit)
+
+Setelah file masuk ke staging area, simpan perubahan dengan:
+
+```bash
+git commit -m "commit pertama"
+```
+
+Pesan commit (`-m`) digunakan untuk menjelaskan perubahan yang kamu lakukan.
+
+Contoh:
+
+```bash
+git commit -m "menambahkan file index.html"
+```
+
+---
+
+## Langkah 5: Melihat Riwayat Perubahan
+
+Untuk melihat riwayat commit:
+
+```bash
+git log
+```
+
+Perintah ini akan menampilkan daftar perubahan yang pernah kamu simpan.
+
+---
+
+## Alur Sederhana yang Harus Diingat
+
+Berikut alur dasar Git:
+
+1. Mengubah file
+2. `git add`
+3. `git commit`
+
+Ulangi langkah ini setiap kali kamu melakukan perubahan.
+
+---
+
+## Latihan Sederhana
+
+Coba lakukan langkah berikut:
+
+1. Buat folder baru
+2. Jalankan `git init`
+3. Buat file `README.md`
+4. Jalankan `git add .`
+5. Jalankan `git commit -m "commit pertama"`
+6. Jalankan `git log`
+
+Jika semua berhasil, berarti kamu sudah berhasil menggunakan Git untuk pertama kali 🎉
+
+---
+
+## Kesimpulan
+
+Sekarang kamu sudah berhasil menggunakan perintah dasar Git.
+
+Ini adalah langkah awal yang sangat penting sebelum masuk ke tahap berikutnya.
+
+---
+
+## Siap Lanjut?
+
+Pada bagian berikutnya, kita akan mulai menghubungkan project kamu ke GitHub dan belajar cara mengirim perubahan ke repository online.
+
+Di sinilah kamu mulai masuk ke dunia kolaborasi 🚀
