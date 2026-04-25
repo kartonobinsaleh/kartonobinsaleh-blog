@@ -37,19 +37,19 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
       <ScrollTopAndComment />
       <article className="mx-auto max-w-7xl">
         <div className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
-          <header className="pt-2 lg:pt-6 xl:pb-6 text-center">
+          <header className="pt-2 text-center lg:pt-6 xl:pb-6">
             <div className="pb-4 text-left lg:hidden">
               <Link
                 href={`/${basePath}`}
-                className="flex items-center text-sm font-medium text-primary-500 hover:text-primary-600 dark:text-primary-400"
+                className="text-primary-500 hover:text-primary-600 dark:text-primary-400 flex items-center text-sm font-medium"
                 aria-label="Back"
               >
-                <ChevronLeft className="w-4 h-4 mr-1" strokeWidth={3} />
+                <ChevronLeft className="mr-1 h-4 w-4" strokeWidth={3} />
                 Back
               </Link>
             </div>
             <PageTitle>{title}</PageTitle>
-            <div className="flex justify-center flex-wrap gap-x-6 gap-y-2 pt-6">
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 pt-6">
               <dl className="flex flex-wrap justify-center gap-4">
                 <dt className="sr-only">Authors</dt>
                 <dd>
@@ -84,39 +84,37 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
             </div>
           </header>
           <div className="flex flex-col divide-y divide-gray-200 pb-8 lg:grid lg:grid-cols-4 lg:grid-rows-[auto_1fr] lg:gap-x-8 lg:divide-y-0 dark:divide-gray-700">
-            <aside className="order-last lg:order-first sticky top-24 lg:self-start divide-y divide-gray-200 dark:divide-gray-700">
+            <aside className="sticky top-24 order-last divide-y divide-gray-200 lg:order-first lg:self-start dark:divide-gray-700">
               {series && <SeriesTableOfContents series={series} currentSlug={slug} />}
-            <div className="text-sm leading-5 font-medium">
-              {tags && (
-                <div className="py-4 lg:py-8">
-                  <h2 className="text-xs tracking-wide text-gray-500 uppercase dark:text-gray-400 mb-4">
-                    Tags
-                  </h2>
-                  <div className="flex flex-wrap">
-                    {tags.map((tag) => (
-                      <Tag key={tag} text={tag} />
-                    ))}
+              <div className="text-sm leading-5 font-medium">
+                {tags && (
+                  <div className="py-4 lg:py-8">
+                    <h2 className="mb-4 text-xs tracking-wide text-gray-500 uppercase dark:text-gray-400">
+                      Tags
+                    </h2>
+                    <div className="flex flex-wrap">
+                      {tags.map((tag) => (
+                        <Tag key={tag} text={tag} />
+                      ))}
+                    </div>
                   </div>
-                </div>
-              )}
-            </div>
-            <div className="hidden lg:block pt-4 lg:pt-8 mt-4">
-              <Link
-                href={`/${basePath}`}
-                className="group flex items-center text-primary-500 transition-colors hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300"
-                aria-label="Back to the blog"
-              >
-                <span className="mr-1 transition-transform duration-300 group-hover:-translate-x-1">
-                  <ChevronLeft className="w-5 h-5" strokeWidth={2.5} />
-                </span>
-                <span className="font-medium">Back</span>
-              </Link>
-            </div>
+                )}
+              </div>
+              <div className="mt-4 hidden pt-4 lg:block lg:pt-8">
+                <Link
+                  href={`/${basePath}`}
+                  className="group text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 flex items-center transition-colors"
+                  aria-label="Back to the blog"
+                >
+                  <span className="mr-1 transition-transform duration-300 group-hover:-translate-x-1">
+                    <ChevronLeft className="h-5 w-5" strokeWidth={2.5} />
+                  </span>
+                  <span className="font-medium">Back</span>
+                </Link>
+              </div>
             </aside>
             <div className="divide-y divide-gray-200 lg:col-span-3 lg:pb-0 dark:divide-gray-700">
-              <div className="prose dark:prose-invert max-w-none pt-10 pb-8">
-                {children}
-              </div>
+              <div className="prose dark:prose-invert max-w-none pt-10 pb-8">{children}</div>
               <div className="pt-6 pb-6 text-sm text-gray-700 dark:text-gray-300">
                 <Link href={editUrl(filePath)}>View on GitHub</Link>
               </div>
@@ -131,11 +129,11 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
               {(next || prev) && (
                 <div className="grid grid-cols-1 gap-4 py-8 sm:grid-cols-2">
                   {prev && prev.path ? (
-                    <div className="group relative rounded-xl border border-gray-200 p-4 transition-colors hover:border-primary-500 dark:border-gray-800">
+                    <div className="group hover:border-primary-500 relative rounded-xl border border-gray-200 p-4 transition-colors dark:border-gray-800">
                       <dt className="text-xs tracking-wide text-gray-500 uppercase dark:text-gray-400">
                         Previous Article
                       </dt>
-                      <dd className="mt-1 text-primary-500 transition-colors dark:text-primary-400">
+                      <dd className="text-primary-500 dark:text-primary-400 mt-1 transition-colors">
                         <Link href={`/${prev.path}`} className="before:absolute before:inset-0">
                           {prev.title}
                         </Link>
@@ -145,11 +143,11 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                     <div />
                   )}
                   {next && next.path && (
-                    <div className="group relative rounded-xl border border-gray-200 p-4 text-right transition-colors hover:border-primary-500 dark:border-gray-800">
+                    <div className="group hover:border-primary-500 relative rounded-xl border border-gray-200 p-4 text-right transition-colors dark:border-gray-800">
                       <dt className="text-xs tracking-wide text-gray-500 uppercase dark:text-gray-400">
                         Next Article
                       </dt>
-                      <dd className="mt-1 text-primary-500 transition-colors dark:text-primary-400">
+                      <dd className="text-primary-500 dark:text-primary-400 mt-1 transition-colors">
                         <Link href={`/${next.path}`} className="before:absolute before:inset-0">
                           {next.title}
                         </Link>
