@@ -1,3 +1,6 @@
+'use client'
+
+import { useEffect, useRef } from 'react'
 import { allBlogs } from 'contentlayer/generated'
 import Link from '@/components/ui/Link'
 
@@ -7,9 +10,21 @@ interface SeriesTableOfContentsProps {
 }
 
 export default function SeriesTableOfContents({ series, currentSlug }: SeriesTableOfContentsProps) {
+  const scrollContainerRef = useRef<HTMLElement>(null)
+  const activeItemRef = useRef<HTMLLIElement>(null)
+
   const seriesPosts = allBlogs
     .filter((post) => post.series === series)
     .sort((a, b) => (a.order || 0) - (b.order || 0))
+
+  useEffect(() => {
+    if (activeItemRef.current && scrollContainerRef.current) {
+      activeItemRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+      })
+    }
+  }, [currentSlug])
 
   if (seriesPosts.length <= 1) return null
 
@@ -18,7 +33,10 @@ export default function SeriesTableOfContents({ series, currentSlug }: SeriesTab
       <h2 className="mb-4 text-xs tracking-wide text-gray-500 uppercase dark:text-gray-400">
         Series: {series}
       </h2>
-      <nav className="no-scrollbar relative max-h-[450px] overflow-y-auto py-1">
+      <nav
+        ref={scrollContainerRef}
+        className="no-scrollbar relative max-h-[280px] overflow-y-auto py-1"
+      >
         {/* Vertical line connecting the steps */}
         <div className="absolute top-0 bottom-0 left-3 w-px bg-gray-200 dark:bg-gray-800" />
 
@@ -26,7 +44,11 @@ export default function SeriesTableOfContents({ series, currentSlug }: SeriesTab
           {seriesPosts.map((post) => {
             const isCurrent = post.slug === currentSlug
             return (
-              <li key={post.slug} className="group flex items-center gap-4">
+              <li
+                key={post.slug}
+                ref={isCurrent ? activeItemRef : null}
+                className="group flex items-center gap-4"
+              >
                 <div
                   className={`relative z-10 flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[10px] font-bold transition-all ${
                     isCurrent

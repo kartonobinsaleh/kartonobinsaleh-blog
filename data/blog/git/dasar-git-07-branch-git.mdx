@@ -1,0 +1,147 @@
+---
+title: 'Belajar Branch di Git: Bekerja Tanpa Mengganggu Kode Utama (Dasar Git #7)'
+date: '2026-04-25'
+tags: ['git', 'branch', 'version control', 'pemula']
+draft: false
+summary: 'Memahami konsep branch di Git serta cara membuat, berpindah, dan mengelola branch untuk pengembangan fitur.'
+images: ['/static/images/blog/git/dasar-git-07-branch-git.webp']
+authors: ['kartonobinsaleh']
+series: 'Dasar Git'
+order: 7
+---
+
+# Belajar Branch di Git
+
+Sampai sejauh ini, kamu sudah bisa:
+- membuat repository  
+- melakukan commit  
+- mengirim perubahan ke GitHub  
+
+Sekarang kita akan belajar salah satu fitur paling penting di Git, yaitu **branch**.
+
+---
+
+## Apa Itu Branch?
+
+Branch adalah cabang dari project utama.
+
+Dengan branch, kamu bisa mengerjakan sesuatu tanpa mengganggu kode utama.
+
+Misalnya:
+- menambahkan fitur baru  
+- mencoba eksperimen  
+- memperbaiki bug  
+
+Semua itu bisa dilakukan di branch terpisah.
+
+---
+
+## Kenapa Harus Pakai Branch?
+
+Tanpa branch, semua perubahan langsung masuk ke project utama.
+
+Akibatnya:
+- risiko error lebih besar  
+- sulit mencoba hal baru  
+- tidak aman untuk kerja tim  
+
+Dengan branch:
+- pekerjaan lebih terpisah  
+- lebih aman  
+- lebih terstruktur  
+
+---
+
+## Melihat Branch
+
+Untuk melihat daftar branch:
+
+```bash id="6p3o7h"
+git branch
+````
+
+Biasanya, branch utama bernama:
+
+```bash
+main
+```
+
+---
+
+## Membuat Branch Baru
+
+Untuk membuat branch baru:
+
+```bash id="4m2k3z"
+git branch fitur-login
+```
+
+Perintah ini hanya membuat branch, tapi belum berpindah ke sana.
+
+---
+
+## Berpindah Branch
+
+Untuk berpindah ke branch lain:
+
+```bash id="y2f9kd"
+git checkout fitur-login
+```
+
+Sekarang kamu sudah bekerja di branch tersebut.
+
+---
+
+## Cara Cepat (Buat + Pindah Sekaligus)
+
+Kamu juga bisa langsung:
+
+```bash id="i0z6xa"
+git checkout -b fitur-register
+```
+
+Perintah ini:
+
+* membuat branch baru
+* langsung berpindah ke branch tersebut
+
+---
+
+## Alur Kerja dengan Branch
+
+Contoh alur sederhana:
+
+1. Buat branch baru
+2. Kerjakan fitur di branch tersebut
+3. Commit perubahan
+4. Kembali ke branch utama
+
+Dengan cara ini, project utama tetap aman.
+
+---
+
+## Kapan Harus Menggunakan Branch?
+
+Gunakan branch ketika:
+
+* membuat fitur baru
+* memperbaiki bug
+* melakukan eksperimen
+
+Jangan langsung bekerja di branch utama.
+
+---
+
+## Kesimpulan
+
+Branch adalah fitur penting yang membuat pekerjaan lebih aman dan terstruktur.
+
+Dengan branch, kamu bisa bekerja lebih bebas tanpa takut merusak project utama.
+
+---
+
+## Siap Lanjut?
+
+Pada bagian berikutnya, kita akan belajar bagaimana menggabungkan branch (merge).
+
+Di sinilah kamu mulai memahami alur kerja tim secara lebih nyata 🚀
