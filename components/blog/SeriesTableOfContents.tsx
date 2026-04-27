@@ -19,9 +19,15 @@ export default function SeriesTableOfContents({ series, currentSlug }: SeriesTab
 
   useEffect(() => {
     if (activeItemRef.current && scrollContainerRef.current) {
-      activeItemRef.current.scrollIntoView({
+      const container = scrollContainerRef.current
+      const activeItem = activeItemRef.current
+
+      // Hitung posisi scroll secara manual agar tidak memicu window jump
+      const scrollPos = activeItem.offsetTop - container.offsetTop - container.clientHeight / 2 + activeItem.clientHeight / 2
+      
+      container.scrollTo({
+        top: scrollPos,
         behavior: 'smooth',
-        block: 'nearest',
       })
     }
   }, [currentSlug])

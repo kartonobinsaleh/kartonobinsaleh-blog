@@ -37,15 +37,15 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
       <ScrollTopAndComment />
       <article className="mx-auto max-w-7xl">
         <div className="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
-          <header className="pt-2 text-center lg:pt-6 xl:pb-6">
-            <div className="pb-4 text-left lg:hidden">
+          <header className="pt-4 text-center lg:pt-6 xl:pb-6">
+            <div className="pb-6 text-left lg:hidden">
               <Link
                 href={`/${basePath}`}
-                className="text-primary-500 hover:text-primary-600 dark:text-primary-400 flex items-center text-sm font-medium"
+                className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-gray-50/50 pl-3 pr-4 py-1.5 text-sm font-medium text-gray-600 transition-all hover:bg-gray-100 hover:text-primary-500 dark:border-gray-700 dark:bg-gray-800/50 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-primary-400"
                 aria-label="Back"
               >
-                <ChevronLeft className="mr-1 h-4 w-4" strokeWidth={3} />
-                Back
+                <ChevronLeft className="h-4 w-4" strokeWidth={2.5} />
+                <span>Back</span>
               </Link>
             </div>
             <PageTitle>{title}</PageTitle>

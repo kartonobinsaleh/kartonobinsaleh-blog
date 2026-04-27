@@ -143,7 +143,7 @@
     --tw-prose-counters: var(--color-gray-500);
     --tw-prose-bullets: var(--color-gray-300);
     --tw-prose-quotes: var(--color-gray-900);
-    --tw-prose-quote-borders: var(--color-gray-200);
+    --tw-prose-quote-borders: var(--color-primary-500);
     --tw-prose-captions: var(--color-gray-500);
     --tw-prose-code: var(--color-primary-600);
     --tw-prose-pre-code: var(--color-gray-200);
@@ -228,7 +228,8 @@
       --tw-prose-bold: var(--color-gray-50);
       --tw-prose-code: var(--color-primary-400);
       --tw-prose-pre-bg: #0f172a;
-      --tw-prose-quote-borders: var(--color-gray-700);
+      --tw-prose-quotes: var(--color-gray-300);
+      --tw-prose-quote-borders: var(--color-primary-500);
       
       & :where(code):not(pre code) {
         background-color: rgba(255, 255, 255, 0.05);
