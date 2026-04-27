@@ -23,8 +23,12 @@ export default function SeriesTableOfContents({ series, currentSlug }: SeriesTab
       const activeItem = activeItemRef.current
 
       // Hitung posisi scroll secara manual agar tidak memicu window jump
-      const scrollPos = activeItem.offsetTop - container.offsetTop - container.clientHeight / 2 + activeItem.clientHeight / 2
-      
+      const scrollPos =
+        activeItem.offsetTop -
+        container.offsetTop -
+        container.clientHeight / 2 +
+        activeItem.clientHeight / 2
+
       container.scrollTo({
         top: scrollPos,
         behavior: 'smooth',

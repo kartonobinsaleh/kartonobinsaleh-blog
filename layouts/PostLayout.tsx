@@ -41,7 +41,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
             <div className="pb-6 text-left lg:hidden">
               <Link
                 href={`/${basePath}`}
-                className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-gray-50/50 pl-3 pr-4 py-1.5 text-sm font-medium text-gray-600 transition-all hover:bg-gray-100 hover:text-primary-500 dark:border-gray-700 dark:bg-gray-800/50 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-primary-400"
+                className="hover:text-primary-500 dark:hover:text-primary-400 inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-gray-50/50 py-1.5 pr-4 pl-3 text-sm font-medium text-gray-600 transition-all hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800/50 dark:text-gray-400 dark:hover:bg-gray-800"
                 aria-label="Back"
               >
                 <ChevronLeft className="h-4 w-4" strokeWidth={2.5} />
