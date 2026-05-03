@@ -9,7 +9,6 @@ import TableWrapper from './TableWrapper'
 import YouTube from '../ui/YouTube'
 import References from '@/components/blog/References'
 
-
 export const components: MDXComponents = {
   Image,
   TOCInline,
@@ -18,5 +17,5 @@ export const components: MDXComponents = {
   pre: Pre,
   table: TableWrapper,
   BlogNewsletterForm,
-  References
+  References,
 }
