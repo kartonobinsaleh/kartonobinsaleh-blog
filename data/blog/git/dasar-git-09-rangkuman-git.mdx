@@ -1,0 +1,141 @@
+---
+title: 'Rangkuman Dasar Git: Dari Nol sampai Siap Digunakan (Dasar Git #9)'
+date: '2026-04-25'
+tags: ['git', 'workflow', 'version control', 'pemula']
+draft: false
+summary: 'Rangkuman lengkap pembelajaran Git dari dasar hingga workflow yang siap digunakan untuk project nyata.'
+images: ['/static/images/blog/git/dasar-git-09-rangkuman-git.webp']
+authors: ['kartonobinsaleh']
+series: 'Dasar Git'
+order: 9
+---
+
+# Rangkuman Dasar Git
+
+Selamat, kamu sudah menyelesaikan pembelajaran dasar Git 🎉
+
+Di bagian ini, kita akan merangkum semua yang sudah kamu pelajari, agar semakin jelas dan siap digunakan dalam project nyata.
+
+---
+
+## Apa yang Sudah Kamu Pelajari?
+
+Kita mulai dari:
+- memahami kenapa Git penting  
+- mengenal konsep version control  
+- memahami cara kerja Git  
+- mengenal istilah penting  
+- praktik perintah dasar  
+- menghubungkan ke GitHub  
+- menggunakan branch  
+- melakukan merge dan menyelesaikan conflict  
+
+Semua itu adalah fondasi utama dalam menggunakan Git.
+
+---
+
+## Workflow Git Secara Sederhana
+
+Berikut alur kerja Git yang paling umum digunakan:
+
+1. Mengubah file  
+2. `git add`  
+3. `git commit`  
+4. `git push`  
+
+Jika bekerja dalam tim:
+
+- gunakan `git pull` sebelum mulai bekerja  
+- gunakan branch untuk fitur baru  
+- lakukan merge setelah selesai  
+
+---
+
+## Contoh Alur Nyata
+
+Misalnya kamu ingin menambahkan fitur login:
+
+1. Buat branch baru  
+```bash
+git checkout -b fitur-login
+````
+
+2. Kerjakan fitur, lalu commit
+
+```bash
+git add .
+git commit -m "menambahkan fitur login"
+```
+
+3. Kirim ke GitHub
+
+```bash
+git push origin fitur-login
+```
+
+4. Gabungkan ke main
+
+```bash
+git checkout main
+git merge fitur-login
+```
+
+---
+
+## Prinsip Penting dalam Menggunakan Git
+
+Agar penggunaan Git kamu lebih efektif, ingat beberapa prinsip berikut:
+
+* lakukan commit secara rutin
+* gunakan pesan commit yang jelas
+* gunakan branch untuk setiap fitur
+* jangan takut melakukan kesalahan
+* biasakan membaca `git status`
+
+---
+
+## Kesalahan yang Sering Terjadi
+
+Beberapa kesalahan umum pemula:
+
+* lupa commit sebelum push
+* bekerja langsung di branch utama
+* tidak memahami alur Git
+* panik saat terjadi conflict
+
+Tenang, itu semua normal dalam proses belajar.
+
+---
+
+## Kesimpulan
+
+Git bukan hanya tools, tapi juga cara berpikir dalam mengelola perubahan.
+
+Dengan Git, kamu bisa bekerja:
+
+* lebih rapi
+* lebih aman
+* dan lebih siap untuk kolaborasi
+
+---
+
+## Langkah Selanjutnya
+
+Setelah ini, kamu bisa mulai:
+
+* menggunakan Git di setiap project
+* belajar GitHub lebih dalam
+* mencoba kolaborasi dengan teman
+* atau membuat project sendiri
+
+Yang terpenting: terus praktik.
+
+---
+
+## Penutup
+
+Belajar Git memang terasa membingungkan di awal.
+
+Tapi jika kamu sudah memahami dasarnya, Git akan menjadi tools yang sangat membantu dalam perjalanan kamu di dunia IT.
+
+Tetap semangat belajar, dan jangan takut mencoba 🚀

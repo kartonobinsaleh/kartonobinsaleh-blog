@@ -1,0 +1,159 @@
+---
+title: 'Menggabungkan Branch di Git: Merge dan Mengatasi Conflict (Dasar Git #8)'
+date: '2026-04-25'
+tags: ['git', 'merge', 'conflict', 'version control', 'pemula']
+draft: false
+summary: 'Belajar cara menggabungkan branch (merge) di Git serta memahami dan mengatasi conflict yang sering terjadi.'
+images: ['/static/images/blog/git/dasar-git-08-merge-conflict.webp']
+authors: ['kartonobinsaleh']
+series: 'Dasar Git'
+order: 8
+---
+
+# Menggabungkan Branch di Git
+
+Pada bagian sebelumnya, kamu sudah belajar tentang branch.
+
+Sekarang pertanyaannya:
+
+Setelah membuat branch dan mengerjakan fitur, bagaimana cara menggabungkannya kembali ke branch utama?
+
+Di sinilah kita menggunakan **merge**.
+
+---
+
+## Apa Itu Merge?
+
+Merge adalah proses menggabungkan perubahan dari satu branch ke branch lain.
+
+Biasanya digunakan untuk:
+- menggabungkan fitur baru ke branch utama  
+- menyatukan hasil kerja tim  
+- memperbarui project utama  
+
+---
+
+## Contoh Sederhana
+
+Misalnya kamu punya:
+- branch `main` (utama)  
+- branch `fitur-login`  
+
+Setelah selesai mengerjakan fitur login, kamu ingin memasukkannya ke `main`.
+
+---
+
+## Langkah 1: Pindah ke Branch Utama
+
+```bash
+git checkout main
+````
+
+---
+
+## Langkah 2: Lakukan Merge
+
+```bash
+git merge fitur-login
+```
+
+Perintah ini akan menggabungkan semua perubahan dari `fitur-login` ke `main`.
+
+Jika tidak ada masalah, merge akan berjalan dengan lancar 🎉
+
+---
+
+## Apa Itu Conflict?
+
+Conflict terjadi ketika Git tidak bisa menentukan perubahan mana yang harus digunakan.
+
+Biasanya terjadi jika:
+
+* dua orang mengubah file yang sama
+* atau bagian kode yang sama diubah di branch berbeda
+
+---
+
+## Contoh Conflict
+
+Misalnya:
+
+Di branch `main`:
+
+```txt
+Halo Dunia
+```
+
+Di branch `fitur-login`:
+
+```txt
+Halo User
+```
+
+Saat di-merge, Git bingung:
+👉 mau pakai “Dunia” atau “User”?
+
+---
+
+## Cara Mengatasi Conflict
+
+Saat conflict terjadi, Git akan menandai bagian yang bermasalah.
+
+Contohnya:
+
+```txt
+<<<<<<< HEAD
+Halo Dunia
+=======
+Halo User
+>>>>>>> fitur-login
+```
+
+Tugas kamu:
+
+* pilih salah satu
+* atau gabungkan keduanya
+
+Misalnya:
+
+```txt
+Halo Dunia dan User
+```
+
+---
+
+## Setelah Conflict Diselesaikan
+
+Setelah memperbaiki file:
+
+```bash
+git add .
+git commit -m "menyelesaikan conflict"
+```
+
+---
+
+## Tips Penting
+
+* lakukan commit secara rutin
+* gunakan branch untuk setiap fitur
+* hindari mengedit file yang sama secara bersamaan
+* selalu lakukan `git pull` sebelum mulai kerja
+
+---
+
+## Kesimpulan
+
+Merge digunakan untuk menggabungkan perubahan antar branch.
+
+Conflict adalah hal yang normal dalam Git, terutama saat bekerja dalam tim.
+
+Yang penting bukan menghindari conflict, tapi memahami cara menyelesaikannya.
+
+---
+
+## Siap Lanjut?
+
+Pada bagian berikutnya, kita akan merangkum semua yang sudah kamu pelajari dan melihat alur kerja Git secara utuh.
+
+Kamu sudah hampir menyelesaikan dasar Git 🚀

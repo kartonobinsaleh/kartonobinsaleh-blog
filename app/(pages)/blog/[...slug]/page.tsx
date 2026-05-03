@@ -80,20 +80,32 @@ export default async function Page(props: { params: Promise<{ slug: string[] }> 
   const params = await props.params
   const slug = decodeURI(params.slug.join('/'))
   // Filter out drafts in production
-  const sortedCoreContents = allCoreContent(sortPosts(allBlogs))
-  const postIndex = sortedCoreContents.findIndex((p) => p.slug === slug)
-  if (postIndex === -1) {
+  const post = allBlogs.find((p) => p.slug === slug) as Blog
+  if (!post) {
     return notFound()
   }
 
-  const prev = sortedCoreContents[postIndex + 1]
-  const next = sortedCoreContents[postIndex - 1]
-  const post = allBlogs.find((p) => p.slug === slug) as Blog
   const authorList = post?.authors || ['default']
   const authorDetails = authorList.map((author) => {
     const authorResults = allAuthors.find((p) => p.slug === author)
     return coreContent(authorResults as Authors)
   })
+
+  let prev, next
+  if (post.series) {
+    const seriesPosts = allBlogs
+      .filter((p) => p.series === post.series)
+      .sort((a, b) => (a.order || 0) - (b.order || 0))
+    const seriesIndex = seriesPosts.findIndex((p) => p.slug === slug)
+    prev = seriesIndex > 0 ? coreContent(seriesPosts[seriesIndex - 1]) : null
+    next = seriesIndex < seriesPosts.length - 1 ? coreContent(seriesPosts[seriesIndex + 1]) : null
+  } else {
+    const sortedCoreContents = allCoreContent(sortPosts(allBlogs))
+    const postIndex = sortedCoreContents.findIndex((p) => p.slug === slug)
+    prev = sortedCoreContents[postIndex + 1]
+    next = sortedCoreContents[postIndex - 1]
+  }
+
   const mainContent = coreContent(post)
   const jsonLd = post.structuredData
   jsonLd['author'] = authorDetails.map((author) => {

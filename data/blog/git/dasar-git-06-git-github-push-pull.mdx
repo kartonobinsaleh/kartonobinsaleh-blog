@@ -1,0 +1,137 @@
+---
+title: 'Menghubungkan Git ke GitHub: Push dan Pull (Dasar Git #6)'
+date: '2026-04-25'
+tags: ['git', 'github', 'version control', 'pemula']
+draft: false
+summary: 'Belajar menghubungkan Git ke GitHub serta menggunakan perintah push dan pull untuk menyimpan dan mengambil perubahan.'
+images: ['/static/images/blog/git/dasar-git-06-git-github-push-pull.webp']
+authors: ['kartonobinsaleh']
+series: 'Dasar Git'
+order: 6
+---
+
+# Menghubungkan Git ke GitHub
+
+Setelah kamu bisa menggunakan Git di komputer lokal, sekarang saatnya naik level.
+
+Di bagian ini, kamu akan belajar bagaimana:
+- menghubungkan project ke GitHub  
+- mengirim perubahan ke repository online  
+- mengambil perubahan dari repository  
+
+---
+
+## Apa Itu GitHub?
+
+GitHub adalah platform online untuk menyimpan repository Git.
+
+Dengan GitHub, kamu bisa:
+- menyimpan project di internet  
+- bekerja sama dengan tim  
+- mengakses project dari mana saja  
+
+---
+
+## Langkah 1: Membuat Repository di GitHub
+
+1. Buka GitHub  
+2. Klik **New Repository**  
+3. Isi nama repository (misalnya: `belajar-git`)  
+4. Klik **Create Repository**
+
+Setelah itu, kamu akan mendapatkan URL repository.
+
+Contoh:
+
+```bash
+https://github.com/username/belajar-git.git
+````
+
+---
+
+## Langkah 2: Menghubungkan Project ke GitHub
+
+Masuk ke folder project kamu, lalu jalankan:
+
+```bash
+git remote add origin https://github.com/username/belajar-git.git
+```
+
+Perintah ini digunakan untuk menghubungkan project lokal dengan repository di GitHub.
+
+---
+
+## Langkah 3: Mengirim Perubahan (Push)
+
+Setelah project terhubung, kirim perubahan ke GitHub:
+
+```bash
+git push -u origin main
+```
+
+Penjelasan:
+
+* `push` → mengirim perubahan
+* `origin` → nama repository remote
+* `main` → nama branch
+
+Jika berhasil, project kamu akan muncul di GitHub 🎉
+
+---
+
+## Langkah 4: Mengambil Perubahan (Pull)
+
+Jika ada perubahan di GitHub (misalnya dari teman), kamu bisa mengambilnya dengan:
+
+```bash
+git pull origin main
+```
+
+Perintah ini akan mengupdate project lokal kamu dengan versi terbaru dari GitHub.
+
+---
+
+## Alur Sederhana Git + GitHub
+
+Sekarang alurnya menjadi:
+
+1. Ubah file
+2. `git add`
+3. `git commit`
+4. `git push`
+
+Jika ada perubahan dari orang lain:
+
+* gunakan `git pull`
+
+---
+
+## Latihan Sederhana
+
+Coba lakukan:
+
+1. Buat repository di GitHub
+2. Hubungkan ke project lokal
+3. Lakukan commit
+4. Jalankan `git push`
+5. Cek apakah file muncul di GitHub
+
+---
+
+## Kesimpulan
+
+Sekarang kamu sudah bisa:
+
+* menggunakan Git secara lokal
+* menghubungkan ke GitHub
+* mengirim dan mengambil perubahan
+
+Ini adalah dasar dari kolaborasi dalam dunia programming.
+
+---
+
+## Siap Lanjut?
+
+Pada bagian berikutnya, kita akan belajar tentang branch dan bagaimana menggunakannya dalam project.
+
+Di sinilah kamu mulai bekerja seperti developer profesional 🚀

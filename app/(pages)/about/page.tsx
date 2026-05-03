@@ -9,7 +9,7 @@ import { Metadata } from 'next'
 export const metadata: Metadata = genPageMetadata({ title: 'About' })
 
 export default function Page() {
-  const author = allAuthors.find((p) => p.slug === 'default') as Authors
+  const author = allAuthors.find((p) => p.slug === 'kartonobinsaleh') as Authors
   const mainContent = coreContent(author)
 
   return (
